@@ -1,2 +1,5 @@
 node_modules
 config.env
+/database/
+lib/store.json
+lib/auth_info_baileys/
