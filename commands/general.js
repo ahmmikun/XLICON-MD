@@ -15,7 +15,7 @@ const speed = require('performance-now')
 const fetch = require('node-fetch');
 
 
-const PastebinAPI = require("pastebin-js");
+const PastebinAPI = require("../lib/pastebin");
 pastebin = new PastebinAPI("EMWTMkQAVfJa9kM-MRUrxd5Oku1U7pgL");
 cmd({
         pattern: "pastebin",

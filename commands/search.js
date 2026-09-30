@@ -135,7 +135,7 @@ cmd({
     },
     async(Void, citel, text) => {
         if (!text) return citel.reply(`give me a query\n*Example : .google Who is Suhail Tech.*`);
-        let google = require('google-it');
+        let google = require('../lib/google-search');
         google({ 'query': text}).then(res => {
             let msg= `🦄xʟɪᴄᴏɴ ɢᴏᴏɢʟᴇ sᴇᴀʀᴄʜ  : ${text} \n\n`;
             for (let g of res) {
