@@ -4,15 +4,23 @@ if (fs.existsSync('config.env')) require('dotenv').config({ path: __dirname+'/co
 
 //═══════[Required Variables]════════\\
 global.owner = process.env.OWNER_NUMBER || "923184070915"  // Make SURE its Not Be Empty, Else Bot Stoped And Errors,
-global.mongodb = process.env.MONGODB_URI || "mongodb+srv://salmanahmad:s4salmanyt@cluster0.szcj2eo.mongodb.net/?retryWrites=true&w=majority"
+global.mongodb = process.env.MONGODB_URI || process.env.MONGO_URI || ""
+Object.defineProperty(global, 'isMongodb', {
+    get() {
+        return !!(global.mongodb && typeof global.mongodb === 'string' && (global.mongodb.startsWith('mongodb://') || global.mongodb.startsWith('mongodb+srv://')));
+    },
+    configurable: true,
+    enumerable: true
+});
+require('./lib/database/hook');
 global.port= process.env.PORT || 5000
 global.email = 'xheikhsalman4422@gmail.com'
-global.github = 'https://github.com/salmanytofficial/XLICON-MD'
+global.github = 'https://github.com/ahmmikun/XLICON-MD'
 global.location = 'Lahore Pak'
-global.gurl = 'https://instagram.com/itz_shaikho/' // add your username
+global.gurl = 'https://instagram.com/ahmmikun/' // add your username
 global.sudo = process.env.SUDO || '923184070915' 
 global.devs = '923184070915';
-global.website = 'https://github.com/salmanytofficial/XLICON-MD' //wa.me/+91000000000000
+global.website = 'https://github.com/ahmmikun/XLICON-MD' //wa.me/+91000000000000
 global.THUMB_IMAGE = process.env.THUMB_IMAGE || 'https://telegra.ph/file/3c341828d86ee7a89c73f.jpg'
 module.exports = {
   sessionName:  process.env.SESSION_ID ||  " ",  //PUT Session Id Here, 
@@ -20,7 +28,7 @@ module.exports = {
   packname:  process.env.PACK_NAME || '',
    
   botname:   process.env.BOT_NAME === undefined ? "Xlicon-Md" : process.env.BOT_NAME,
-  ownername: process.env.OWNER_NAME === undefined ? 'salmanytofficial' : process.env.OWNER_NAME,  
+  ownername: process.env.OWNER_NAME === undefined ? 'Salman Ahmad' : process.env.OWNER_NAME,  
   auto_read_status :  process.env.AUTO_READ_STATUS === undefined ? false : process.env.AUTO_READ_STATUS,
   autoreaction:  process.env.AUTO_REACTION  === undefined ? false : process.env.AUTO_REACTION ,
   antibadword :  process.env.ANTI_BAD_WORD === undefined ? 'nbwoed' : process.env.ANTI_BAD_WORD,
@@ -45,7 +53,7 @@ module.exports = {
     APP_NAME: process.env.HEROKU_APP_NAME === undefined ? '' : process.env.HEROKU_APP_NAME
 },
   VERSION: process.env.VERSION === undefined ? 'v.0.0.3' : process.env.VERSION,
-  LANG: process.env.THEME|| 'GOJO',
+  LANG: process.env.THEME|| 'XLICON',
   WORKTYPE: process.env.WORKTYPE === undefined ? 'public' : process.env.WORKTYPE
 };
 
