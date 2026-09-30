@@ -2,14 +2,14 @@
   "name": "XLICON-MD",
   "version": "0.0.7",
   "description": "Multi device whatsapp bot by TEAM-X.",
-  "main": "lib/client.js",
+  "main": "index.js",
   "type": "commonjs",
   "license": "GPL-3.0",
   "scripts": {
-    "start": "pm2 start lib/client.js --deep-monitoring --attach --name XLICON",
+    "start": "node index.js",
     "stop": "pm2 stop XLICON"
   },
-  "author": "salmanytofficial",
+  "author": "ahmmikun",
   "dependencies": {
     "@adiwajshing/keyed-db": "^0.2.4",
     "@hapi/boom": "^9.1.4",
@@ -50,6 +50,7 @@
     "node-webpmux": "^3.1.0",
     "openai": "4.25.0",
     "pm2": "^7.0.4",
+    "qrcode-terminal": "^0.12.0",
     "secktor-pack": "npm:yt-search@^2.13.1",
     "simple-git": "^3.16.1",
     "soundcloud-downloader": "^1.0.0",
@@ -81,10 +82,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/salmanytofficial/XLICON-MD.git"
+    "url": "git+https://github.com/ahmmikun/XLICON-MD.git"
   },
   "bugs": {
-    "url": "https://github.com/salmanytofficial/XLICON-MD/issues"
+    "url": "https://github.com/ahmmikun/XLICON-MD/issues"
   },
-  "homepage": "https://github.com/salmanytofficial/XLICON-MD#readme"
+  "homepage": "https://github.com/ahmmikun/XLICON-MD#readme"
 }
