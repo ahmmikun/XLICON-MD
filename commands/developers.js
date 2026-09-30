@@ -51,7 +51,7 @@ citel.reply("```ᎬХᏟᎬᏞ:-\n https://github.com/Xcelsama/STAR-MD-V2```")
 
 await sleep(1000)
 
-citel.reply("```ՏᎪᏞᎷᎪΝ:- https://github.com/salmanytofficial/XLICON-V3-MD```")
+citel.reply("```ՏᎪᏞᎷᎪΝ:- https://github.com/ahmmikun/XLICON-V3-MD```")
 
 await sleep(1000)
 
@@ -71,7 +71,7 @@ citel.reply("```EX-BOTS:- https://EX-BOTS/BAT-MD")
 
 await sleep(1000)
 
-citel.reply("```https://github.com/salmanytofficial/XLICON-V2-MD```")
+citel.reply("```https://github.com/ahmmikun/XLICON-V2-MD```")
 
 await sleep(1000)
 

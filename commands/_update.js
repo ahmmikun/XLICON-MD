@@ -4,7 +4,7 @@
  You may not use this file except in compliance with the License.
  It is supplied in the hope that it may be useful.
  * @project_name : XLICON-MD
- * @author : salmanytofficial <https://github.com/salmanytofficial/XLICON-MD>
+ * @author : ahmmikun <https://github.com/ahmmikun/XLICON-MD>
  * @description : XLICON,A Multi-functional whatsapp bot.
  * @version 0.0.6
  **/

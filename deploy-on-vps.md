@@ -25,7 +25,7 @@
 
    5. Clone Repo and install required packages
       ```
-      git clone https://github.com/salmanytofficial/XLICON-MD
+      git clone https://github.com/ahmmikun/XLICON-MD
       cd XLICON-MD
       yarn install --network-concurrency 1
       ```

@@ -4,7 +4,7 @@
  You may not use this file except in compliance with the License.
  It is supplied in the hope that it may be useful.
  * @project_name : BLADE-MD
- * @author : salmanytofficial <https://github.com/Bladeh4x>
+ * @author : ahmmikun <https://github.com/Bladeh4x>
  * @description : BLADE, A Multi-functional whatsapp bot.
  * @version 0.0.6
  **/
@@ -189,7 +189,8 @@ cmd({
 *📡ᑭᑌᗷᒪIᑕ ᘜᖇOᑌᑭ:* https://chat.whatsapp.com/EmP3syvou18HrZk6R6nTAK
 *🔍Տᑕᗩᑎ ᑫᖇ:* https://star-md-qr-web-xcelsama-e29e85286f3a.herokuapp.com/
 *💻ᑕᕼᗩᑎᑎᗴᒪ ᒪIᑎK:* https://whatsapp.com/channel/0029Va9wmuz8F2pGIURwmo0m
-*⚙️DᗴᑭloY YOᑌᖇ Oᗯᑎ:*-https://dashboard.heroku.com/new?template=https://github.com/Xcelsama/STAR-MD`
+*⚙️DᗴᑭloY YOᑌᖇ Oᗯᑎ:*-
+https://dashboard.heroku.com/new?template=https://github.com/Xcelsama/STAR-MD`
         let buttonMessaged = {
             image: { url: await botpic() },
             caption: cap,

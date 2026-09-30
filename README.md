@@ -13,16 +13,16 @@
 </p>
   
 <p align="center">
-<a href="https://github.com/salmanytofficial"><img title="Author" src="https://img.shields.io/badge/XLICON-BOT-black?style=for-the-badge&logo=whatsapp"></a>
+<a href="https://github.com/ahmmikun"><img title="Author" src="https://img.shields.io/badge/XLICON-BOT-black?style=for-the-badge&logo=whatsapp"></a>
 <p/>
 <p align="center">
-<a href="https://github.com/salmanytofficial?tab=followers"><img title="Followers" src="https://img.shields.io/github/followers/salmanytofficial?label=Followers&style=social"></a>
-<a href="https://github.com/salmanytofficial/XLICON-MD/stargazers/"><img title="Stars" src="https://img.shields.io/github/stars/salmanytofficial/XLICON-MD?&style=social"></a>
-<a href="https://github.com/salmanytofficial/XLICON-MD/network/members"><img title="Fork" src="https://img.shields.io/github/forks/salmanytofficial/XLICON-MD?style=social"></a>
-<a href="https://github.com/salmanytofficial/XLICON-MD/watchers"><img title="Watching" src="https://img.shields.io/github/watchers/salmanytofficial/XLICON-MD?label=Watching&style=social"></a>
+<a href="https://github.com/ahmmikun?tab=followers"><img title="Followers" src="https://img.shields.io/github/followers/ahmmikun?label=Followers&style=social"></a>
+<a href="https://github.com/ahmmikun/XLICON-MD/stargazers/"><img title="Stars" src="https://img.shields.io/github/stars/ahmmikun/XLICON-MD?&style=social"></a>
+<a href="https://github.com/ahmmikun/XLICON-MD/network/members"><img title="Fork" src="https://img.shields.io/github/forks/ahmmikun/XLICON-MD?style=social"></a>
+<a href="https://github.com/ahmmikun/XLICON-MD/watchers"><img title="Watching" src="https://img.shields.io/github/watchers/ahmmikun/XLICON-MD?label=Watching&style=social"></a>
 </p>
 
-<p align="center"><img src="https://profile-counter.glitch.me/{salmanytofficial}/count.svg" alt="SALMAN AHMAD :: Visitor's Count" /></p>
+<p align="center"><img src="https://profile-counter.glitch.me/{ahmmikun}/count.svg" alt="SALMAN AHMAD :: Visitor's Count" /></p>
 
 </br>
 
@@ -40,9 +40,9 @@ Don't Deploy This Bot...
 You Guyz Can Try My Other Bots Like ***XLICON-V2*** & ***XLICON-V3*** Which Have Many `Advance Features` Then This Bot
 <br>
 
-[*XLICON-V2*](https://github.com/salmanytofficial/XLICON-V2-MD)
+[*XLICON-V2*](https://github.com/ahmmikun/XLICON-V2-MD)
 <br>
-[*XLICON-V3*](https://github.com/salmanytofficial/XLICON-V3-MD)
+[*XLICON-V3*](https://github.com/ahmmikun/XLICON-V3-MD)
 <br>
 
 ---
@@ -50,7 +50,7 @@ You Guyz Can Try My Other Bots Like ***XLICON-V2*** & ***XLICON-V3*** Which Have
 
 
 ❏FORK THE REPOSITORY 
-  <a href="https://github.com/salmanytofficial/XLICON-MD/fork" target="_blank">
+  <a href="https://github.com/ahmmikun/XLICON-MD/fork" target="_blank">
   <img src="https://img.shields.io/badge/FORK XLICON-black?style=for-the-badge&logo=render" alt="Authenticate With WhatsApp" width="170" height="34">
 </a>
 
@@ -148,7 +148,7 @@ Choose your repo
 
 
 4.Deploy On Vps
-[Deploy on VPS or PC.](https://github.com/salmanytofficial/XLICON-MD/blob/main/deploy-on-vps.md)
+[Deploy on VPS or PC.](https://github.com/ahmmikun/XLICON-MD/blob/main/deploy-on-vps.md)
 
 
   ........................................................
@@ -168,7 +168,7 @@ Choose your repo
 </h4>
 
 <p align="center" >
-    <a href="https://repl.it/github/salmanytofficial/XLICON-MD">
+    <a href="https://repl.it/github/ahmmikun/XLICON-MD">
     <img src="https://repl.it/badge/github/quiec/whatsasena" width="170px" alt="Deploy on REPLIT" >
     </a>
 </p>
@@ -211,7 +211,7 @@ Choose your repo
 </p>
 
 <p align="center" >
-    <a href="https://heroku.com/deploy?template=https://github.com/salmanytofficial/XLICON-MD">
+    <a href="https://heroku.com/deploy?template=https://github.com/ahmmikun/XLICON-MD">
     <img src="https://www.herokucdn.com/deploy/button.png" width="170px" alt="Deploy on Heroku" >
     </a>
 
@@ -234,7 +234,7 @@ Choose your repo
 </p>
 
 <p align="center" >
-    <a href="https://app.koyeb.com/apps/deploy?type=git&repository=github.com/https://github.com/salmanytofficial/XLICON-MD&branch=main&build_command=npm%20i&run_command=npm%20start&env[SESSION_ID]&env[OWNER_NUMBER]&env[MONGODB_URI]&&env[OWNER_NAME]&env[PREFIX]=.&env[THUMB_IMAGE]=https://telegra.ph/file/3c341828d86ee7a89c73f.jpg&env[email]=infiniteytff@gmail.com&env[global_url]=instagram.com/sla.sher_&env[FAKE_COUNTRY_CODE]=974&env[READ_MESSAGE]=false&env[DISABLE_PM]=false&env[ANTI_BAD_WORD]=fuck&env[WORKTYPE]=public&env[THEME]=GOJO&env[PACK_INFO]=XLICON;MD&name=xliconuser000&env[KOYEB_NAME]=profilecorruptederror&env[ANTILINK_VALUES]=chat.whatsapp.com&env[PORT]=8000">
+    <a href="https://app.koyeb.com/apps/deploy?type=git&repository=github.com/https://github.com/ahmmikun/XLICON-MD&branch=main&build_command=npm%20i&run_command=npm%20start&env[SESSION_ID]&env[OWNER_NUMBER]&env[MONGODB_URI]&&env[OWNER_NAME]&env[PREFIX]=.&env[THUMB_IMAGE]=https://telegra.ph/file/3c341828d86ee7a89c73f.jpg&env[email]=infiniteytff@gmail.com&env[global_url]=instagram.com/sla.sher_&env[FAKE_COUNTRY_CODE]=974&env[READ_MESSAGE]=false&env[DISABLE_PM]=false&env[ANTI_BAD_WORD]=fuck&env[WORKTYPE]=public&env[THEME]=GOJO&env[PACK_INFO]=XLICON;MD&name=xliconuser000&env[KOYEB_NAME]=profilecorruptederror&env[ANTILINK_VALUES]=chat.whatsapp.com&env[PORT]=8000">
     <img src="https://www.koyeb.com/static/images/deploy/button.svg" width="170px" alt="Deploy on Koyeb" >
     </a>
 
@@ -354,9 +354,9 @@ Choose your repo
 
 <div align="center">
   
-| [![𝚂𝚊𝚕𝚖𝚊𝚗𝙾𝚏𝚏𝚒𝚌𝚒𝚊𝚕](https://github.com/salmanytofficial.png?lenght=50width=50)](https://github.com/salmanytofficial)|
+| [![𝚂𝚊𝚕𝚖𝚊𝚗𝙾𝚏𝚏𝚒𝚌𝚒𝚊𝚕](https://github.com/ahmmikun.png?lenght=50width=50)](https://github.com/ahmmikun)|
 |----|
-| [ 𝙎𝘼𝙇𝙈𝘼𝙉 𝘼𝙃𝙈𝘼𝘿 ](https://github.com/salmanytofficial) |
+| [ 𝙎𝘼𝙇𝙈𝘼𝙉 𝘼𝙃𝙈𝘼𝘿 ](https://github.com/ahmmikun) |
 |  Owner, Developer, Bug Fixer, Maintainer, updates |
 
 <br>
