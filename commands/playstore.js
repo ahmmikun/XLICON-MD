@@ -1,4 +1,4 @@
-nst { tlang, botpic, cmd, prefix, runtime, Config, formatp, fetchJson } = require('../lib')
+const { tlang, botpic, cmd, prefix, runtime, Config, formatp, fetchJson } = require('../lib')
 const { download} = require('aptoide-scraper')
 
 cmd({

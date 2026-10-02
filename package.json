@@ -6,8 +6,7 @@
   "type": "commonjs",
   "license": "GPL-3.0",
   "scripts": {
-    "start": "node index.js",
-    "stop": "pm2 stop XLICON"
+    "start": "node index.js"
   },
   "author": "ahmmikun",
   "dependencies": {
@@ -49,11 +48,11 @@
     "node-schedule": "^2.1.1",
     "node-webpmux": "^3.1.0",
     "openai": "4.25.0",
-    "pm2": "^7.0.4",
     "qrcode-terminal": "^0.12.0",
     "secktor-pack": "npm:yt-search@^2.13.1",
     "simple-git": "^3.16.1",
     "soundcloud-downloader": "^1.0.0",
+    "truecallerjs": "^2.2.0",
     "vz-tiktok-downloader": "^2.2.5",
     "wa-sticker-formatter": "^4.3.2",
     "ytdl-secktor": "latest"

@@ -1,0 +1,33 @@
+
+  ██╗  ██╗██╗     ██╗ ██████╗ ██████╗ ███╗   ██╗     ███╗   ███╗██████╗ 
+  ╚██╗██╔╝██║     ██║██╔════╝██╔═══██╗████╗  ██║     ████╗ ████║██╔══██╗
+   ╚███╔╝ ██║     ██║██║     ██║   ██║██╔██╗ ██║     ██╔████╔██║██║  ██║
+   ██╔██╗ ██║     ██║██║     ██║   ██║██║╚██╗██║     ██║╚██╔╝██║██║  ██║
+  ██╔╝ ██╗███████╗██║╚██████╗╚██████╔╝██║ ╚████║     ██║ ╚═╝ ██║██████╔╝
+  ╚═╝  ╚═╝╚══════╝╚═╝ ╚═════╝ ╚═════╝ ╚═╝  ╚═══╝     ╚═╝     ╚═╝╚═════╝ 
+    ⚡ MULTI-DEVICE WHATSAPP BOT  |  POWERED BY BAILEYS v7.0 ⚡
+
+╔════════════════════════════════════════════════════════════════════════════╗
+║                           SYSTEM SPECIFICATIONS                            ║
+╠════════════════════════════════════════════════════════════════════════════╣
+║  * Bot Name   : Xlicon-Md                  * Baileys   : v7.0.0-rc14       ║
+║  * Node.js    : v24.18.0                   * Platform  : win32 (x64)       ║
+║  * Database   : Local JSON DB (/database)  * Prefix    : [ . ]             ║
+║  * Owner      : Salman Ahmad               * Work Type : public            ║
+║  * Dashboard  : http://localhost:5000      * Branch    : main              ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+╔════════════════════════════════════════════════════════════════════════════╗
+║                          CHOOSE CONNECTION METHOD                          ║
+╠════════════════════════════════════════════════════════════════════════════╣
+║                                                                            ║
+║   [1]  📱  QR Code        Scan QR directly via your WhatsApp app           ║
+║   [2]  🔢  Pairing Code   Link using 8-character code & phone number       ║
+║   [3]  ❌  Exit Bot       Terminate the bot process                         ║
+║                                                                            ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+ℹ️  Existing active session detected for +923076949158.
+   Press Enter to resume this session, or choose 1 / 2 to re-link, or 3 to exit.
+
+👉 Enter your choice [1, 2, or 3]: 

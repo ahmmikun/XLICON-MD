@@ -1,5 +1,5 @@
 ## Deploy on VPS or PC.
-- You need to Install git,ffmpeg,curl,nodejs,yarn with pm2 
+- You need to Install git,ffmpeg,curl,nodejs,yarn 
    1. Install git ffmpeg curl 
       ```
        sudo apt -y update &&  sudo apt -y upgrade 
@@ -18,19 +18,14 @@
       sudo apt -y update && sudo apt -y install yarn
       ```
 
-   4. Install pm2
-      ```
-      sudo yarn global add pm2
-      ```
-
-   5. Clone Repo and install required packages
+   4. Clone Repo and install required packages
       ```
       git clone https://github.com/ahmmikun/XLICON-MD
       cd XLICON-MD
       yarn install --network-concurrency 1
       ```
 
-   6. Create an env file for ENV. 
+   5. Create an env file for ENV. 
       ```
       touch config.env
       nano config.env
@@ -63,7 +58,6 @@
       ```
       ctrl + o and ctrl + x, To save and exit
 
-   7. start and stop bot
+   6. start and stop bot
 
-      To start bot ``` npm start ```,
-      To stop bot ``` npm stop ```
+      To start bot ``` npm start ```, stop it with `Ctrl + C`

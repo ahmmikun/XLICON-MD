@@ -52,9 +52,8 @@ cmd({
         let kill = await remove(text.split(" ")[0])
         delete require.cache[require.resolve(__dirname+"/" + text + ".js")];
         fs.unlinkSync(__dirname + "/" + text+ ".js");
-        await citel.reply(`*_${kill}_* \n*Please Wait _${Config.botname}_ Restarting_*`)
-        const { exec } = require("child_process")
-        exec('pm2 restart all')  
+        await citel.reply(`*_${kill}_* \n*${Config.botname} Restarting*`)
+        process.exit(0)  
  }
  catch (e) {return await citel.reply("*_Plugin Not Found In Mongodb Server_*")}
  })

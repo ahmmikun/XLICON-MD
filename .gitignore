@@ -3,4 +3,5 @@ config.env
 /database/
 lib/store.json
 lib/assets/Xlicon.png
-lib/auth_info_baileys/
+/session/
+creds.json

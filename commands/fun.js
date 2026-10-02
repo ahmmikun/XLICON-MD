@@ -205,3 +205,36 @@ async (Void, citel) => {
     citel.reply(`Error: ${error.message || error}`);
   }
 });
+
+//---------------------------------------------------------------------------
+cmd({
+  pattern: 'why',
+  desc: 'Sends a why question!!',
+  category: 'fun',
+  filename: __filename,
+},
+async (Void, citel) => {
+  try {
+    const { data } = await axios.get('https://nekos.life/api/v2/why');
+    return citel.reply('```' + data.why + '```');
+  } catch (e) {
+    return citel.reply('Error fetching question: ' + e.message);
+  }
+});
+
+//---------------------------------------------------------------------------
+cmd({
+  pattern: 'rwall',
+  alias: ['wallpaper'],
+  desc: 'Sends a Random Anime Wallpaper.',
+  category: 'fun',
+  filename: __filename,
+},
+async (Void, citel) => {
+  try {
+    const { data } = await axios.get('https://nekos.life/api/v2/img/wallpaper');
+    return citel.imgurl(data.url, '*Here we go*');
+  } catch (e) {
+    return citel.reply('Error fetching wallpaper: ' + e.message);
+  }
+});

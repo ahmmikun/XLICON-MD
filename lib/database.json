@@ -2,9 +2,319 @@
   "sticker": {},
   "database": {},
   "game": {},
-  "others": { 
+  "others": {
     "vote": []
   },
-  "users": {},
-  "chats": { }
+  "users": {
+    "923076949158@s.whatsapp.net": {
+      "afkTime": -1,
+      "afkReason": ""
+    },
+    "120363420452814697@newsletter": {
+      "afkTime": -1,
+      "afkReason": ""
+    },
+    "57260671819853@lid": {
+      "afkTime": -1,
+      "afkReason": ""
+    },
+    "275381257040077@lid": {
+      "afkTime": -1,
+      "afkReason": ""
+    },
+    "208078817468597@lid": {
+      "afkTime": -1,
+      "afkReason": ""
+    },
+    "171588355903730@lid": {
+      "afkTime": -1,
+      "afkReason": ""
+    },
+    "123128843919387@lid": {
+      "afkTime": -1,
+      "afkReason": ""
+    },
+    "203942663303197@lid": {
+      "afkTime": -1,
+      "afkReason": ""
+    },
+    "107323045470267@lid": {
+      "afkTime": -1,
+      "afkReason": ""
+    },
+    "107400002588799@lid": {
+      "afkTime": -1,
+      "afkReason": ""
+    },
+    "234303971655918@lid": {
+      "afkTime": -1,
+      "afkReason": ""
+    },
+    "233453551399075@lid": {
+      "afkTime": -1,
+      "afkReason": ""
+    },
+    "196564211503128@lid": {
+      "afkTime": -1,
+      "afkReason": ""
+    },
+    "51973902590128@lid": {
+      "afkTime": -1,
+      "afkReason": ""
+    },
+    "65992776499279@lid": {
+      "afkTime": -1,
+      "afkReason": ""
+    },
+    "93145509445813@lid": {
+      "afkTime": -1,
+      "afkReason": ""
+    },
+    "77635828875283@lid": {
+      "afkTime": -1,
+      "afkReason": ""
+    },
+    "94541474431045@lid": {
+      "afkTime": -1,
+      "afkReason": ""
+    },
+    "178696442921166@lid": {
+      "afkTime": -1,
+      "afkReason": ""
+    },
+    "122286761861330@lid": {
+      "afkTime": -1,
+      "afkReason": ""
+    },
+    "48271657558177@lid": {
+      "afkTime": -1,
+      "afkReason": ""
+    },
+    "119065234411613@lid": {
+      "afkTime": -1,
+      "afkReason": ""
+    },
+    "79706774859920@lid": {
+      "afkTime": -1,
+      "afkReason": ""
+    },
+    "30451351724166@lid": {
+      "afkTime": -1,
+      "afkReason": ""
+    },
+    "70575573725374@lid": {
+      "afkTime": -1,
+      "afkReason": ""
+    },
+    "22656472584307@lid": {
+      "afkTime": -1,
+      "afkReason": ""
+    },
+    "37172975526048@lid": {
+      "afkTime": -1,
+      "afkReason": ""
+    },
+    "85208426619094@lid": {
+      "afkTime": -1,
+      "afkReason": ""
+    },
+    "187484549980348@lid": {
+      "afkTime": -1,
+      "afkReason": ""
+    },
+    "58090087018554@lid": {
+      "afkTime": -1,
+      "afkReason": ""
+    },
+    "51488151838760@lid": {
+      "afkTime": -1,
+      "afkReason": ""
+    },
+    "252433028649213@lid": {
+      "afkTime": -1,
+      "afkReason": ""
+    },
+    "17897397207261@lid": {
+      "afkTime": -1,
+      "afkReason": ""
+    },
+    "32075520450693@lid": {
+      "afkTime": -1,
+      "afkReason": ""
+    },
+    "132294035664935@lid": {
+      "afkTime": -1,
+      "afkReason": ""
+    },
+    "224983875903488@lid": {
+      "afkTime": -1,
+      "afkReason": ""
+    },
+    "193922353594461@lid": {
+      "afkTime": -1,
+      "afkReason": ""
+    },
+    "4454384418923@lid": {
+      "afkTime": -1,
+      "afkReason": ""
+    },
+    "30404828475567@lid": {
+      "afkTime": -1,
+      "afkReason": ""
+    },
+    "82128616333465@lid": {
+      "afkTime": -1,
+      "afkReason": ""
+    },
+    "52699701711049@lid": {
+      "afkTime": -1,
+      "afkReason": ""
+    },
+    "12292783657214@lid": {
+      "afkTime": -1,
+      "afkReason": ""
+    },
+    "59210503045351@lid": {
+      "afkTime": -1,
+      "afkReason": ""
+    },
+    "93166430621949@lid": {
+      "afkTime": -1,
+      "afkReason": ""
+    },
+    "147635256168493@lid": {
+      "afkTime": -1,
+      "afkReason": ""
+    },
+    "90834263380037@lid": {
+      "afkTime": -1,
+      "afkReason": ""
+    },
+    "135983278346443@lid": {
+      "afkTime": -1,
+      "afkReason": ""
+    },
+    "271077548814513@lid": {
+      "afkTime": -1,
+      "afkReason": ""
+    },
+    "237709763342497@lid": {
+      "afkTime": -1,
+      "afkReason": ""
+    },
+    "113339908788381@lid": {
+      "afkTime": -1,
+      "afkReason": ""
+    },
+    "6051625738251@lid": {
+      "afkTime": -1,
+      "afkReason": ""
+    },
+    "214366783856669@lid": {
+      "afkTime": -1,
+      "afkReason": ""
+    },
+    "95146947420302@lid": {
+      "afkTime": -1,
+      "afkReason": ""
+    },
+    "119194687422646@lid": {
+      "afkTime": -1,
+      "afkReason": ""
+    },
+    "51759389126791@lid": {
+      "afkTime": -1,
+      "afkReason": ""
+    },
+    "41580316651696@lid": {
+      "afkTime": -1,
+      "afkReason": ""
+    },
+    "88579506213116@lid": {
+      "afkTime": -1,
+      "afkReason": ""
+    },
+    "165159209271535@lid": {
+      "afkTime": -1,
+      "afkReason": ""
+    },
+    "78744718954631@lid": {
+      "afkTime": -1,
+      "afkReason": ""
+    },
+    "135102491308219@lid": {
+      "afkTime": -1,
+      "afkReason": ""
+    },
+    "3655671541793@lid": {
+      "afkTime": -1,
+      "afkReason": ""
+    },
+    "53197985058832@lid": {
+      "afkTime": -1,
+      "afkReason": ""
+    }
+  },
+  "chats": {
+    "35949648072883@lid": {
+      "mute": false,
+      "wame": false
+    },
+    "120363227260620876@g.us": {
+      "mute": false,
+      "wame": false
+    },
+    "923076949158@s.whatsapp.net": {
+      "mute": false,
+      "wame": false
+    },
+    "120363420452814697@newsletter": {
+      "mute": false,
+      "wame": false
+    },
+    "120363398687404368@g.us": {
+      "mute": false,
+      "wame": false
+    },
+    "120363409895175244@g.us": {
+      "mute": false,
+      "wame": false
+    },
+    "923178822917-1631722137@g.us": {
+      "mute": false,
+      "wame": false
+    },
+    "120363415294551114@g.us": {
+      "mute": false,
+      "wame": false
+    },
+    "120363423659505052@g.us": {
+      "mute": false,
+      "wame": false
+    },
+    "120363045421939458@g.us": {
+      "mute": false,
+      "wame": false
+    },
+    "120363041046992255@g.us": {
+      "mute": false,
+      "wame": false
+    },
+    "120363347805415857@g.us": {
+      "mute": false,
+      "wame": false
+    },
+    "120363400940550184@g.us": {
+      "mute": false,
+      "wame": false
+    },
+    "120363411275548293@g.us": {
+      "mute": false,
+      "wame": false
+    },
+    "120363350551779660@g.us": {
+      "mute": false,
+      "wame": false
+    }
+  }
 }
