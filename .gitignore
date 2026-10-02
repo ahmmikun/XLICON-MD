@@ -1,7 +1,11 @@
 node_modules
 config.env
 /database/
-lib/store.json
-lib/assets/Xlicon.png
 /session/
 creds.json
+lib/store.json
+lib/database.json
+lib/assets/Xlicon.png
+*.log
+_dbg.*
+
