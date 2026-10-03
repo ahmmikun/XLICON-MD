@@ -1,0 +1,113 @@
+--- orig/lib/terminalUi.js	2026-10-03 23:10:13.930975417 +0000
++++ XLICON-MD-main/lib/terminalUi.js	2026-10-03 23:10:13.990967380 +0000
+@@ -157,10 +157,65 @@
+     console.log(borderBot + '\n');
+ }
+ 
++// ---------- session storage ----------
++// The linked WhatsApp session lives in a folder. SESSION_DIR can point it at a persistent disk/volume
++// (for hosts that wipe the project folder on every deploy). Default: ./session
++const MENU_TIMEOUT_MS = parseInt(process.env.MENU_TIMEOUT_MS, 10) || 45000;
++
++function getSessionDir() {
++    const custom = (process.env.SESSION_DIR || '').trim();
++    return custom ? path.resolve(custom) : path.join(__dirname, '..', 'session');
++}
++
++function clearSavedSession() {
++    try { fs.emptyDirSync(getSessionDir()); } catch (e) {}
++}
++
++// Is a linked session saved, and for which number? (number is null when WhatsApp stored a LID instead)
++function readSavedSession(dir) {
++    try {
++        const creds = fs.readJsonSync(path.join(dir, 'creds.json'));
++        const id = creds && creds.me && creds.me.id;
++        if (!id) return { registered: false, number: null };
++        const [user, domain] = String(id).split('@');
++        return { registered: true, number: domain === 's.whatsapp.net' ? user.split(':')[0] : null };
++    } catch (e) {
++        return { registered: false, number: null };
++    }
++}
++
+ async function promptConnectionChoice(config = {}) {
+     displayBanner();
+     displaySystemInfo(config);
+ 
++    const sessionDir = getSessionDir();
++    const saved = readSavedSession(sessionDir);
++    const wanted = (process.env.PAIRING_NUMBER || '').replace(/[^0-9]/g, '');
++
++    if (process.env.SESSION_ID) {
++        console.log(colors.amber.bold('ℹ️  SESSION_ID is no longer used. Set PAIRING_NUMBER instead. The session is saved in: ' + sessionDir + '\n'));
++    }
++
++    // A) PAIRING_NUMBER was changed since the last link -> replace the saved session with a new one.
++    if (saved.registered && wanted && saved.number && saved.number !== wanted) {
++        console.log(colors.amber.bold(`🔁 PAIRING_NUMBER (+${wanted}) differs from the saved session (+${saved.number}). Replacing the session...\n`));
++        clearSavedSession();
++        return { mode: 'pairing', phoneNumber: wanted };
++    }
++
++    // B) A linked session is saved -> resume it. No question asked, no Enter needed.
++    if (saved.registered) {
++        console.log(colors.neonGreen.bold(`⚡ Resuming saved session${saved.number ? ' (+' + saved.number + ')' : ''}...\n`));
++        return { mode: 'session' };
++    }
++
++    // C) Nothing linked yet, but a number is configured -> pair automatically.
++    if (wanted) {
++        clearSavedSession(); // drop leftovers of an unfinished earlier attempt
++        console.log(colors.amber.bold(`🔢 No saved session. Requesting a pairing code for +${wanted}...\n`));
++        return { mode: 'pairing', phoneNumber: wanted };
++    }
++
+     // If CLI argument or env variable was explicitly supplied
+     if (process.argv.includes('--use-pairing-code') || process.env.USE_PAIRING_CODE === 'true' || process.env.PAIRING_CODE === 'true') {
+         console.log(colors.amber.bold('ℹ️  Auto-selected: Pairing Code (--use-pairing-code)\n'));
+@@ -178,7 +233,6 @@
+     }
+ 
+     // Check if session creds already exist and are registered
+-    const sessionDir = path.join(__dirname, '..', 'session');
+     const credsPath = path.join(sessionDir, 'creds.json');
+ 
+     let hasRegisteredSession = false;
+@@ -216,11 +270,25 @@
+         input: process.stdin,
+         output: process.stdout
+     });
+-    const ask = (query) => new Promise((resolve) => rl.question(query, (ans) => resolve((ans || '').trim())));
++    // timeoutMs > 0: give up waiting (resolves null) so a panel without keyboard input never hangs forever.
++    const ask = (query, timeoutMs = 0) => new Promise((resolve) => {
++        let timer = null;
++        if (timeoutMs) timer = setTimeout(() => resolve(null), timeoutMs);
++        rl.question(query, (ans) => { clearTimeout(timer); resolve((ans || '').trim()); });
++    });
+ 
++    let firstAsk = true;
+     try {
+         while (true) {
+-            const choice = await ask(colors.cyan.bold('👉 Enter your choice [1, 2, or 3]: '));
++            const choice = await ask(colors.cyan.bold('👉 Enter your choice [1, 2, or 3]: '), firstAsk ? MENU_TIMEOUT_MS : 0);
++            firstAsk = false;
++
++            if (choice === null) {
++                console.log(colors.amber.bold('\n⏱  No answer. Is this a panel without keyboard input? Starting QR mode.'));
++                console.log(colors.gray('   For a pairing code with no typing, set PAIRING_NUMBER (country code, digits only).\n'));
++                rl.close();
++                return { mode: 'qr' };
++            }
+ 
+             if (hasRegisteredSession && choice === '') {
+                 console.log(colors.neonGreen.bold(`\n⚡ Resuming existing session for +${registeredJid}...\n`));
+@@ -326,6 +394,8 @@
+     displaySystemInfo,
+     displayConnectionMenu,
+     promptConnectionChoice,
++    getSessionDir,
++    clearSavedSession,
+     displayQrCode,
+     displayPairingCode,
+     displayConnectionOpen,

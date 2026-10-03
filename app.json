@@ -74,8 +74,9 @@
     "description": "The phone numbers of the users who you want to be admin for the bot (should be in international format without + and multiple numbers must be separated by a comma \",\")",
        "value": "Put Owner Number here"
   },
-   "SESSION_ID": {
-    "description": "Please put your Session ID that u scanned from the bot.... If u haven't scanned go to XLICON-MD Github Repo U can find the Scanner Option"
+   "PAIRING_NUMBER": {
+    "description": "Your WhatsApp number with country code, digits only (e.g. 2348012345678). The bot prints a pairing code in the logs on first start. Note: Heroku wipes files on every restart, so you would have to pair again each time.",
+    "required": false
   },
     "OPENAI_API_KEY": {
     "description": "Please put your OPENAI api key here.Get it from beta.openai.com(optional if u don't wan't then don't put it ",
@@ -83,9 +84,9 @@
        "required" :false
   },
   "MONGODB_URI": {
-    "description": "A secret String for Mongodb Connection.(Required),change for better experience",
-    "value": "mongodb+srv://salmanahmad:s4salmanyt@cluster0.szcj2eo.mongodb.net/?retryWrites=true&w=majority",
-    "required" :true
+    "description": "Optional. A MongoDB connection string. Leave empty to keep the bot's data in local JSON files (/database). Use MongoDB only if your host wipes files on restart.",
+    "value": "",
+    "required": false
   },
     "THEME": {
     "description": "Put the theme name you want to use. Avilable themes are XLICON,ZEROTWO,NEZUKO,LUFFY,GOKU and many more..",
