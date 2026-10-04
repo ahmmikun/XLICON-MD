@@ -33,3 +33,16 @@ Only the docs (README.md, app.json) said "required". Both are fixed, and the aut
 connection string (with a password) was removed from them.
 - A MongoDB connect failure now gives up after 8s (was about 30s) and prints a clear message.
 - If you set a URI that is wrong or unreachable, DB features can fail. Fix the URI or empty it.
+
+## Menu: greeting, time, weather
+The `menu` command already existed (alias of `help` in commands/_xmenu3.0.js) and builds its list from the live
+command registry, so plugins added later show up on their own. Now its header also shows:
+- a greeting for the time of day, using the sender's name
+- local time (default Port Harcourt, WAT)
+- current weather for Port Harcourt (Open-Meteo, no API key, cached for 10 minutes)
+If the weather service is down, the menu still sends and shows "unavailable right now".
+
+Files: lib/menuInfo.js (new), commands/_xmenu3.0.js (changed).
+Another city: set MENU_CITY="Lagos" in config.env.
+Also removed a line that set the whole bot's default timezone to Kolkata (and language to Indonesian) every time the menu ran.
+Open-Meteo is free for non-commercial use and asks for attribution (CC BY 4.0).

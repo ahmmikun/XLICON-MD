@@ -19,6 +19,7 @@ const long = String.fromCharCode(8206);
 const readmore = long.repeat(4001);
 
 const Secktor = require("../lib");
+const { getMenuInfo } = require("../lib/menuInfo");
 
 // ==========================================
 // HELP COMMAND
@@ -94,14 +95,8 @@ Secktor.cmd({
         }
     });
 
-    // Date and time
-    const currentTime = moment(moment()).format("HH:mm:ss");
-
-    moment.tz.setDefault("Asia/KOLKATA").locale("id");
-
-    const currentDate = moment
-        .tz("Asia/Kolkata")
-        .format("DD/MM/YYYY");
+    // Greeting, local time and weather (default location: Port Harcourt, see lib/menuInfo.js)
+    const info = await getMenuInfo(message.pushName);
 
     // Database user count (originally fetched but not displayed)
     let totalUsers = 0;
@@ -122,7 +117,9 @@ Secktor.cmd({
             "│ │➮Fᴏᴜɴᴅᴇʀ- 𝙎𝙖𝙡𝙢𝙖𝙣 𝘼𝙝𝙢𝙖𝙙\n" +
             "│ │➮Oᴡɴᴇʀ - " + Config.ownername + "\n" +
             "│ │➮Pʀᴇꜰɪx - [ " + prefix + " ]\n" +
-            "│ │➮ᴛᴏᴅᴀʏ ɪs - " + currentDate + "\n" +
+            "│ │➮Gʀᴇᴇᴛɪɴɢ - " + info.greeting + "\n" +
+            "│ │➮Tɪᴍᴇ - " + info.time + "\n" +
+            "│ │➮Wᴇᴀᴛʜᴇʀ - " + info.weather + " · " + info.place + "\n" +
             "│ │➮ᴜᴘ ᴛɪᴍᴇ - " + runtime(process.uptime()) + "\n" +
             "│ │➮Tʜᴇᴍᴇ - " + tlang().title + "\n" +
             "│ │➮Mᴇᴍᴏ - " +
