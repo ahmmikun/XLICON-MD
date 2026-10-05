@@ -462,7 +462,7 @@ cmd({
         "&domains=techcrunch.com,animenewsnetwork.com,myanimelist.net,comingsoon.net,crunchyroll.com" +
         "&language=en" +
         "&sortby=publishedat" +
-        "&apikey=cd4116be09ef4a0caceedf21b6258460" +
+        "&apikey=" + process.env.NEWSAPI_KEY +
         "&pageSize=8";
 
     const response = await axios.get(apiUrl);
