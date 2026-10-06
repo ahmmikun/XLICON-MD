@@ -8,4 +8,4 @@ lib/database.json
 lib/assets/Xlicon.png
 *.log
 _dbg.*
-
+features/plugin_*.js

@@ -35,12 +35,12 @@
       ```
       OWNER_NUMBER="92xxxxxxxxxx"
       MONGODB_URI="mongodb+srv://*************"
-      SESSION_ID = "Put Session Id Here"
+      PAIRING_NUMBER="2348012345678"
       THUMB_IMAGE = "https://telegra.ph/file/8f6f537cc4103b48f3783.jpg"
       port = 5000
       email = "xxxxxxxxxxxxx@gmail.com"
       global_url = "www.instagram.com/itz_shaikho/_"
-      OWNER_NAME = "SALMAN"
+      OWNER_NAME = "Your Name"
       AUTO_REACTION = false
       FAKE_COUNTRY_CODE = 354
       READ_MESSAGE = false
@@ -50,7 +50,6 @@
       ANTI_BAD_WORD = "fuck"
       LEVEL_UP_MESSAGE= true
       WELCOME_MESSAGE =  "*Hi,* @user \n*Welcome in* @gname \n*Member count* : @count th"
-      THEME= GOJO
       WORKTYPE = public
       PACK_INFO = "XLICON MD;WA BOT"
       ANTILINK_VALUES = "chat.whatsapp.com"

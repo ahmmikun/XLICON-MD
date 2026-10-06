@@ -1,131 +1,136 @@
-{ 
+{
   "name": "XLICON MD",
   "description": "A Whatsapp md bot built in NodeJs to make experience better",
   "logo": "https://telegra.ph/file/3c341828d86ee7a89c73f.jpg",
-  "keywords": ["nodejs", "bot", "whatsapp bot", "Zero-Two", "Xlicon Bot", "Xlicon","Xlicon MD","theme bot","multi device","baileys"],
+  "keywords": [
+    "nodejs",
+    "bot",
+    "whatsapp bot",
+    "Xlicon Bot",
+    "Xlicon",
+    "Xlicon MD",
+    "multi device",
+    "baileys"
+  ],
   "success_url": "/",
   "stack": "container",
-"env": {
-  "OWNER_NAME": {
-  "description": "BOT OWNER NAME",
-      "value":"Salman Ahmad"
-  },
-  "ALIVE_MESSAGE": {
-    "description": " SET YOUR ALIVE MESSAGE FOR THE BOT",
-     "required" :false, 
-     "value": "•.•:•.•:•:•:•:•:•:•:•☾☼☽•:•.•:•.•:•:•:•:•:•:•\nι αм σηℓιηє нσω ¢αη ι нєℓρ уσυ \n•.•:•.•:•:•:•:•:•:•:•☾☼☽•:•.•:•.•:•:•:•:•:•:•\n\n*ι αм ᴍυℓтι ԃєνιᴄє ω* \n*Cʀєαтєԃ вყ : ,ʂαʅɱαɳ αԋɱαԃ*\n\n𝚆𝙷𝙰𝚃𝚂𝙰𝙿𝙿 : wa.me/+923184070915\n 𝙵𝙾𝙻𝙻𝙾𝚆: https://whatsapp.com/channel/0029Va9wmuz8F2pGIURwmo0m" 
- },
+  "env": {
+    "OWNER_NAME": {
+      "description": "BOT OWNER NAME",
+      "value": "Salman Ahmad"
+    },
+    "ALIVE_MESSAGE": {
+      "description": " SET YOUR ALIVE MESSAGE FOR THE BOT",
+      "required": false,
+      "value": "•.•:•.•:•:•:•:•:•:•:•☾☼☽•:•.•:•.•:•:•:•:•:•:•\nι αм σηℓιηє нσω ¢αη ι нєℓρ уσυ \n•.•:•.•:•:•:•:•:•:•:•☾☼☽•:•.•:•.•:•:•:•:•:•:•\n\n*ι αм ᴍυℓтι ԃєνιᴄє ω* \n*Cʀєαтєԃ вყ : ,ʂαʅɱαɳ αԋɱαԃ*\n\n𝚆𝙷𝙰𝚃𝚂𝙰𝙿𝙿 : wa.me/+923184070915\n 𝙵𝙾𝙻𝙻𝙾𝚆: https://whatsapp.com/channel/0029Va9wmuz8F2pGIURwmo0m"
+    },
     "AUTO_STATUS_SAVER": {
       "description": "Automatically saves status of every person and sends in log number.put true or false",
-       "required" :false, 
-       "value":"false"
-       },
-  "AUTO_READ_STATUS": {
-    "description": "Fill the value true if you want bot view your Status or false.",
-    "required" :false,
-    "value": "false"
-      },
-    "HEROKU_API_KEY": {
-    "description": "Put HEROKU API KEY",
-"value":"8cf895b5-dbdf-4d5d-b2a1-b31319db8aa6" 
-   },
-  "HEROKU_APP_NAME": {
-    "description": "Put HEROKU APP NAME same as above.",
-     "required" :true
+      "required": false,
+      "value": "false"
     },
-   "THUMB_IMAGE": {
-    "description": "THUMBNAIL for bot.",
-     "value": "https://telegra.ph/file/3c341828d86ee7a89c73f.jpg"
+    "AUTO_READ_STATUS": {
+      "description": "Fill the value true if you want bot view your Status or false.",
+      "required": false,
+      "value": "false"
+    },
+    "HEROKU_API_KEY": {
+      "description": "Put HEROKU API KEY",
+      "value": "8cf895b5-dbdf-4d5d-b2a1-b31319db8aa6"
+    },
+    "HEROKU_APP_NAME": {
+      "description": "Put HEROKU APP NAME same as above.",
+      "required": true
+    },
+    "THUMB_IMAGE": {
+      "description": "THUMBNAIL for bot.",
+      "value": "https://telegra.ph/file/3c341828d86ee7a89c73f.jpg"
     },
     "ANTI_BAD_WORD": {
-    "description": "Put words here. If you want it enabled in your bot otherwise leave it blank",
-     "required" :false
+      "description": "Put words here. If you want it enabled in your bot otherwise leave it blank",
+      "required": false
     },
-   "ANTILINK_VALUES": {
-    "description": "Put words for antilink",
-     "value": "chat.whatsapp.com",
-     "required" :false
+    "ANTILINK_VALUES": {
+      "description": "Put words for antilink",
+      "value": "chat.whatsapp.com",
+      "required": false
     },
-     "ANTILINK_ACTION": {
-    "description": "Put action for antilink",
-     "value": "remove",
-     "required" :false
+    "ANTILINK_ACTION": {
+      "description": "Put action for antilink",
+      "value": "remove",
+      "required": false
     },
-  "LEVEL_UP_MESSAGE": {
-    "description": "Fill the value true if you want bot send Level up message in chat.",
-     "required" :false,
-     "value": "false"
+    "LEVEL_UP_MESSAGE": {
+      "description": "Fill the value true if you want bot send Level up message in chat.",
+      "required": false,
+      "value": "false"
     },
-      "READ_MESSAGE": {
-    "description": "Fill the value true if you want bot to read all messages.",
-     "required" :false,
-     "value": "true"
+    "READ_MESSAGE": {
+      "description": "Fill the value true if you want bot to read all messages.",
+      "required": false,
+      "value": "true"
     },
     "DISABLE_PM": {
       "description": "Disable bot in pm",
       "value": "false",
-      "required" :false
+      "required": false
     },
-      "PREFIX": {
-  "description": "Enter your desired prefix for bot.",
+    "PREFIX": {
+      "description": "Enter your desired prefix for bot.",
       "value": "*"
-  },
-  "OWNER_NUMBER": {
-    "description": "The phone numbers of the users who you want to be admin for the bot (should be in international format without + and multiple numbers must be separated by a comma \",\")",
-       "value": "Put Owner Number here"
-  },
-   "PAIRING_NUMBER": {
-    "description": "Your WhatsApp number with country code, digits only (e.g. 2348012345678). The bot prints a pairing code in the logs on first start. Note: Heroku wipes files on every restart, so you would have to pair again each time.",
-    "required": false
-  },
+    },
+    "OWNER_NUMBER": {
+      "description": "The phone numbers of the users who you want to be admin for the bot (should be in international format without + and multiple numbers must be separated by a comma \",\")",
+      "value": "Put Owner Number here"
+    },
+    "PAIRING_NUMBER": {
+      "description": "Your WhatsApp number with country code, digits only (e.g. 2348012345678). The bot prints a pairing code in the logs on first start. Note: Heroku wipes files on every restart, so you would have to pair again each time.",
+      "required": false
+    },
     "OPENAI_API_KEY": {
-    "description": "Please put your OPENAI api key here.Get it from beta.openai.com(optional if u don't wan't then don't put it ",
-       "value": "ADD A OPEN AI KEY",
-       "required" :false
-  },
-  "MONGODB_URI": {
-    "description": "Optional. A MongoDB connection string. Leave empty to keep the bot's data in local JSON files (/database). Use MongoDB only if your host wipes files on restart.",
-    "value": "",
-    "required": false
-  },
-    "THEME": {
-    "description": "Put the theme name you want to use. Avilable themes are XLICON,ZEROTWO,NEZUKO,LUFFY,GOKU and many more..",
-     "value": "XLICON"
-  },
+      "description": "Please put your OPENAI api key here.Get it from beta.openai.com(optional if u don't wan't then don't put it ",
+      "value": "ADD A OPEN AI KEY",
+      "required": false
+    },
+    "MONGODB_URI": {
+      "description": "Optional. A MongoDB connection string. Leave empty to keep the bot's data in local JSON files (/database). Use MongoDB only if your host wipes files on restart.",
+      "value": "",
+      "required": false
+    },
     "WORKTYPE": {
-  "description": "Worktype of your bot. Use public or private, if it is private then only bot number can use it. If public then everyone can use it.",
-         "value": "public"
+      "description": "Worktype of your bot. Use public or private, if it is private then only bot number can use it. If public then everyone can use it.",
+      "value": "public"
+    },
+    "AUTO_REACTION": {
+      "description": "Reacts emoji to all commands.",
+      "value": "false",
+      "required": false
+    },
+    "PACK_AUTHER": {
+      "description": "PUT STICKER AUTHOR NAME",
+      "value": "Xlicon",
+      "required": true
+    },
+    "PACK_NAME": {
+      "description": "PUT STICKER PACK NAME",
+      "value": "XLICON",
+      "required": true
+    },
+    "heroku": {
+      "description": "Weather it is on heroku or not",
+      "value": "true",
+      "required": false
+    }
   },
-      "AUTO_REACTION": {
-    "description": "Reacts emoji to all commands.",
-     "value": "false",
-     "required": false 
+  "formation": {
+    "worker": {
+      "quantity": 1,
+      "size": "basic"
+    }
   },
-  "PACK_AUTHER": {
-    "description": "PUT STICKER AUTHOR NAME",
-    "value": "Xlicon",
-    "required" :true
-  },
-  "PACK_NAME": {
-    "description": "PUT STICKER PACK NAME",
-    "value": "XLICON",
-    "required" :true
-  },
-  "heroku": {
-    "description": "Weather it is on heroku or not",
-     "value": "true",
-     "required": false   
-  }
-},
-"formation": {
-		"worker": {
-			"quantity": 1,
-			"size": "basic"
-		}
-	},
-"addons": [
-		{
-			"plan": "heroku-postgresql"
-		}
-	]
+  "addons": [
+    {
+      "plan": "heroku-postgresql"
+    }
+  ]
 }
