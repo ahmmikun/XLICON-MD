@@ -1,4 +1,4 @@
-const { cmd, ui } = require('../lib');
+const { cmd, Config, ui } = require('../lib');
 const axios = require('axios');
 cmd(
     {
@@ -10,9 +10,10 @@ cmd(
     },
     async (Void, citel, text) => {
         if (!text) return citel.reply(`_Name a Series or movie ${ui.text.greet}._`);
-        let fids = await axios.get(`http://www.omdbapi.com/?apikey=742b2d09&t=${text}&plot=full`);
+        if (!Config.keys.omdb) return citel.reply(ui.text.working);
+        let fids = await axios.get('https://www.omdbapi.com/', { params: { apikey: Config.keys.omdb, t: text, plot: 'full' } });
+        if (fids.data.Response === 'False') return citel.reply(ui.fail(`I could not find "${text}".`));
         let imdbt = '';
-        console.log(fids.data);
         imdbt += '⚍⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚍\n' + ' ``` 𝕀𝕄𝔻𝔹 𝕊𝔼𝔸ℝℂℍ```\n' + '⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎\n';
         imdbt += '🎬Title      : ' + fids.data.Title + '\n';
         imdbt += '📅Year       : ' + fids.data.Year + '\n';

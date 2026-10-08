@@ -30,11 +30,7 @@ cmd(
         return Void.sendMessage(
             citel.chat,
             {
-                text: ui.panel('SHIP', '❣️', [
-                    `@${citel.sender.split('@')[0]}  x  @${partner.split('@')[0]}`,
-                    ui.field('💘', 'Match', `${percent}%`),
-                    verdict(percent),
-                ]),
+                text: [`❣️ @${citel.sender.split('@')[0]} × @${partner.split('@')[0]}`, ui.line('💘', 'Match', `${percent}%`), verdict(percent)].join('\n'),
                 mentions: [citel.sender, partner],
             },
             { quoted: citel },

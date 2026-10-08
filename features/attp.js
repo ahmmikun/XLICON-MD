@@ -1,20 +1,11 @@
-const { cmd, getBuffer } = require('../lib');
+const { cmd, ui } = require('../lib');
+
 cmd(
     {
         pattern: 'attp',
-        desc: 'Makes glowing sticker of text.',
+        desc: 'Make an animated text sticker',
         category: 'sticker',
         filename: __filename,
     },
-    async (Void, citel, text) => {
-        let a = await getBuffer(`https://vihangayt.me/maker/text2gif?q=${text}`);
-        return citel.reply(
-            a,
-            {
-                packname: 'IZUKU',
-                author: 'ATTP',
-            },
-            'sticker',
-        );
-    },
+    async (Void, citel) => citel.reply(ui.text.working),
 );

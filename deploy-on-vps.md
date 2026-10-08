@@ -48,7 +48,6 @@
       WARN_COUNT = 3
       DISABLE_PM = false
       ANTI_BAD_WORD = "fuck"
-      LEVEL_UP_MESSAGE= true
       WELCOME_MESSAGE =  "*Hi,* @user \n*Welcome in* @gname \n*Member count* : @count th"
       WORKTYPE = public
       PACK_INFO = "XLICON MD;WA BOT"

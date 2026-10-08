@@ -20,12 +20,12 @@ cmd(
         const zone = ZONES[text.trim().toLowerCase()] || (await getPlace());
         const now = moment.tz(zone.tz).locale('en');
         return citel.reply(
-            ui.panel('TIME', '🕐', [
-                ui.field('📍', 'Place', zone.name),
-                ui.field('⏰', 'Time', now.format('hh:mm:ss A')),
-                ui.field('📅', 'Date', now.format('dddd, DD MMMM YYYY')),
-                ui.field('🌐', 'Zone', now.format('z (Z)')),
-            ]),
+            [
+                ui.line('📍', 'Place', zone.name),
+                ui.line('⏰', 'Time', now.format('hh:mm:ss A')),
+                ui.line('📅', 'Date', now.format('dddd, DD MMMM YYYY')),
+                ui.line('🌐', 'Zone', now.format('z (Z)')),
+            ].join('\n'),
         );
     },
 );

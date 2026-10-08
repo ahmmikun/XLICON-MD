@@ -10,7 +10,7 @@ cmd(
     async (Void, citel, text) => {
         if (!text)
             return (
-                reply('What picture are you looking for?') &&
+                citel.reply('What picture are you looking for?') &&
                 Void.sendMessage(citel.chat, {
                     react: {
                         text: '❌',

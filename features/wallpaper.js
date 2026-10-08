@@ -1,28 +1,19 @@
 const { cmd, ui } = require('../lib');
-const fetch = require('node-fetch');
+const { getJson } = require('../lib/api');
+
 cmd(
     {
         pattern: 'wallpaper',
-        desc: 'To get Random Pics',
-        category: 'Anime Pics',
+        desc: 'Search for a wallpaper',
+        use: '<keyword>',
+        category: 'misc',
         filename: __filename,
     },
-    async (conn, message) => {
-        const response = await fetch(
-            'https://api.unsplash.com/photos/random?client_id=72utkjatCBC-PDcx7-Kcvgod7-QOFAm2fXwEeW8b8cc',
-        );
-        const imageData = await response.json();
-        const imageUrl = imageData.urls.regular;
-        const wallpaperMessage = {
-            image: {
-                url: imageUrl,
-            },
-            caption: '*---Random Wallpapers Here---*',
-            footer: ui.text.footer,
-            headerType: 4,
-        };
-        return await conn.sendMessage(message.chat, wallpaperMessage, {
-            quoted: message,
-        });
+    async (Void, citel, text) => {
+        const query = text.trim();
+        if (!query) return citel.reply(ui.info(`Give me a keyword, e.g. ${ui.prefix}wallpaper goku`));
+        const data = await getJson('https://wallhaven.cc/api/v1/search', { params: { q: query, categories: '111', purity: '100', sorting: 'random' } });
+        if (!data.data.length) return citel.reply(ui.fail(`No wallpaper found for "${query}".`));
+        return Void.sendMessage(citel.chat, { image: { url: data.data[0].path } }, { quoted: citel });
     },
 );

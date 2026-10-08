@@ -13,13 +13,12 @@ cmd(
     async (Void, citel, text) => {
         const command = find(text.trim().split(/\s+/)[0]);
         if (!command) return citel.reply(ui.fail('No such command.'));
-        const location = path.relative(path.join(__dirname, '..'), command.filename);
         return citel.reply(
-            ui.panel('FILE', '📂', [
-                ui.field('🔹', 'Command', ui.prefix + command.pattern),
-                ui.field('📂', 'Category', command.category),
-                ui.field('📄', 'File', location),
-            ]),
+            [
+                ui.line('🔹', 'Command', ui.prefix + command.pattern),
+                ui.line('📂', 'Category', command.category),
+                ui.line('📄', 'File', path.relative(path.join(__dirname, '..'), command.filename)),
+            ].join('\n'),
         );
     },
 );

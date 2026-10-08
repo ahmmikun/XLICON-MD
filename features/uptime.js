@@ -8,5 +8,5 @@ cmd(
         category: 'misc',
         filename: __filename,
     },
-    async (Void, citel) => citel.reply(ui.panel('UPTIME', '⏱️', [ui.field('🟢', 'Running for', runtime(process.uptime()))])),
+    async (Void, citel) => citel.reply(ui.line('⏱️', 'Uptime', runtime(process.uptime()))),
 );

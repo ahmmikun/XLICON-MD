@@ -9,13 +9,13 @@ cmd(
     },
     async (Void, citel) =>
         citel.reply(
-            ui.panel('CREDITS', '🧬', [
-                ui.field('🛠️', 'Main dev', 'Salman Ahmad'),
-                ui.field('💻', 'Excel Amadi', 'https://github.com/Xcelsama'),
-                ui.field('🔐', 'QR ideas', 'Abraham Dwamena'),
-                ui.field('🐛', 'Bug fixes', 'SuhailTechInfo'),
-                ui.field('🏗️', 'Base', 'SamPandey001 (Secktor-MD)'),
-                ui.field('📦', 'Source', Config.github),
-            ]),
+            [
+                ui.line('🛠️', 'Main dev', 'Salman Ahmad'),
+                ui.line('💻', 'Excel Amadi', 'https://github.com/Xcelsama'),
+                ui.line('🔐', 'QR ideas', 'Abraham Dwamena'),
+                ui.line('🐛', 'Bug fixes', 'SuhailTechInfo'),
+                ui.line('🏗️', 'Base', 'SamPandey001 (Secktor-MD)'),
+                ui.line('📦', 'Source', Config.github),
+            ].join('\n'),
         ),
 );

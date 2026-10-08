@@ -1,33 +1,26 @@
-const { cmd } = require('../lib');
+const { cmd, Config, ui } = require('../lib');
+const { http } = require('../lib/api');
+
 cmd(
     {
         pattern: 'exec',
-        desc: 'Evaluates quoted code with given language.',
+        desc: 'Run quoted code in a given language',
+        use: '<language> (reply to the code)',
         category: 'misc',
         filename: __filename,
     },
     async (Void, citel, text) => {
-        try {
-            const code = {
-                script: citel.quoted.text,
-                language: text[1],
-                versionIndex: '0',
-                stdin: text.slice(2).join(' '),
-                clientId: '694805244d4f825fc02a9d6260a54a99',
-                clientSecret: '741b8b6a57446508285bb5893f106df3e20f1226fa3858a1f2aba813799d4734',
-            };
-            request(
-                {
-                    url: 'https://api.jdoodle.com/v1/execute',
-                    method: 'POST',
-                    json: code,
-                },
-                function (_error, _response, body) {
-                    return citel.reply('> ' + text[1] + '\n\n' + '```' + body.output + '```');
-                },
-            );
-        } catch (error) {
-            console.log(error);
+        const { jdoodleId, jdoodleSecret } = Config.keys;
+        if (!jdoodleId || !jdoodleSecret) return citel.reply(ui.text.working);
+        const [language, ...input] = text.trim().split(/\s+/);
+        if (!language || !citel.quoted || !citel.quoted.text) {
+            return citel.reply(ui.info(`Reply to some code with ${ui.prefix}exec <language>, e.g. ${ui.prefix}exec python3`));
         }
+        const { data } = await http.post(
+            'https://api.jdoodle.com/v1/execute',
+            { script: citel.quoted.text, language, versionIndex: '0', stdin: input.join(' '), clientId: jdoodleId, clientSecret: jdoodleSecret },
+            { timeout: 30000 },
+        );
+        return citel.reply(`> ${language}\n\n\`\`\`${data.output}\`\`\``);
     },
 );

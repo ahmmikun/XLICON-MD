@@ -1,63 +1,22 @@
 const { cmd, ui } = require('../lib');
-const axios = require('axios');
+const { getJson } = require('../lib/api');
+
+const clean = (value) => value.replace(/<!\[CDATA\[|\]\]>/g, '').replace(/<[^>]+>/g, '').trim();
+
 cmd(
     {
         pattern: 'animenews',
-        category: 'Anime Pics',
-        desc: 'Sends Anime News in chat',
+        desc: 'Latest anime news',
+        category: 'anime',
         filename: __filename,
     },
-    async (conn, message) => {
-        const searchQueries = [
-            'Anime News Today',
-            'New Anime',
-            'Uocoming Anime News',
-            'New Anime Info',
-            'Whats news in Anime',
-            'Anime Series',
-            'Manga News today',
-            'Anime New News',
-            'Anime News today',
-        ];
-        const randomQuery = searchQueries[Math.floor(Math.random() * searchQueries.length)];
-        const apiUrl =
-            'https://newsapi.org/v2/everything?q=' +
-            randomQuery +
-            '&domains=techcrunch.com,animenewsnetwork.com,myanimelist.net,comingsoon.net,crunchyroll.com' +
-            '&language=en' +
-            '&sortby=publishedat' +
-            '&apikey=cd4116be09ef4a0caceedf21b6258460' +
-            '&pageSize=8';
-        const response = await axios.get(apiUrl);
-        const articles = response.data.articles;
-        articles.map(async (article) => {
-            await conn.sendMessage(
-                message.chat,
-                {
-                    image: {
-                        url: article.urlToImage,
-                    },
-                    caption:
-                        '*Title🔰:* ' +
-                        article.title +
-                        '\n\n*Content🧩:* ' +
-                        article.content +
-                        '\n*Author📌:* ' +
-                        article.author +
-                        '\n*Source♦️:* ' +
-                        article.source.name +
-                        '\n*Created On☘️:* ' +
-                        article.publishedAt +
-                        '\n*More on✨:* ' +
-                        article.url +
-                        '\n\n*Powered by ' +
-                        ui.text.title +
-                        '*',
-                },
-                {
-                    quoted: message,
-                },
-            );
+    async (Void, citel) => {
+        const xml = await getJson('https://www.animenewsnetwork.com/all/rss.xml', { responseType: 'text', transformResponse: (body) => body });
+        const items = [...xml.matchAll(/<item>([\s\S]*?)<\/item>/g)].slice(0, 5).map(([, item]) => {
+            const field = (name) => clean((item.match(new RegExp(`<${name}>([\\s\\S]*?)</${name}>`)) || [, ''])[1]);
+            return `📰 *${field('title')}*\n${field('link')}`;
         });
+        if (!items.length) return citel.reply(ui.fail('No news right now.'));
+        return citel.reply(items.join('\n\n'));
     },
 );

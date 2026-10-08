@@ -60,11 +60,6 @@
       "value": "remove",
       "required": false
     },
-    "LEVEL_UP_MESSAGE": {
-      "description": "Fill the value true if you want bot send Level up message in chat.",
-      "required": false,
-      "value": "false"
-    },
     "READ_MESSAGE": {
       "description": "Fill the value true if you want bot to read all messages.",
       "required": false,
@@ -119,6 +114,26 @@
     "heroku": {
       "description": "Weather it is on heroku or not",
       "value": "true",
+      "required": false
+    },
+    "GEMINI_API_KEY": {
+      "description": "Free key from aistudio.google.com/apikey. Powers .chat, .chatgpt and the auto chatbot.",
+      "required": false
+    },
+    "GROQ_API_KEY": {
+      "description": "Free key from console.groq.com/keys. Used if Gemini is not set.",
+      "required": false
+    },
+    "OPENROUTER_API_KEY": {
+      "description": "Free key from openrouter.ai/keys. Used if the others are not set.",
+      "required": false
+    },
+    "OMDB_API_KEY": {
+      "description": "Free key from omdbapi.com. Needed for .imdb.",
+      "required": false
+    },
+    "TENOR_API_KEY": {
+      "description": "Tenor API key. Needed for .emix.",
       "required": false
     }
   },

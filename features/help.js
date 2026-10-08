@@ -14,13 +14,13 @@ cmd(
 
         if (!name) {
             return citel.reply(
-                ui.panel('HELP', '📖', [
-                    `▸ ${ui.prefix}menu  all commands`,
-                    `▸ ${ui.prefix}menu <category>  one category`,
-                    `▸ ${ui.prefix}help <command>  usage of a command`,
-                    `▸ ${ui.prefix}ping  check speed`,
-                    `▸ ${ui.prefix}owner  contact the owner`,
-                ]),
+                [
+                    `📖 ${ui.font('How to use the bot')}`,
+                    `▸ ${ui.prefix}menu · all commands`,
+                    `▸ ${ui.prefix}menu <category> · one category`,
+                    `▸ ${ui.prefix}help <command> · how a command works`,
+                    `▸ ${ui.prefix}owner · contact the owner`,
+                ].join('\n'),
             );
         }
 
@@ -28,16 +28,14 @@ cmd(
         if (!command) return citel.reply(ui.fail(`No command called "${name}".`));
 
         const lines = [
-            ui.field('🔹', 'Command', ui.prefix + command.pattern),
-            ui.field('📂', 'Category', command.category),
-            ui.field('📝', 'About', command.desc || 'No description'),
+            ui.line('🔹', 'Command', ui.prefix + command.pattern),
+            ui.line('📂', 'Category', command.category),
+            ui.line('📝', 'About', command.desc || 'No description'),
         ];
         if (command.alias && command.alias.length) {
-            lines.push(ui.field('🔁', 'Aliases', command.alias.map((alias) => ui.prefix + alias).join(', ')));
+            lines.push(ui.line('🔁', 'Aliases', command.alias.map((alias) => ui.prefix + alias).join(', ')));
         }
-        if (command.use && command.use.trim()) {
-            lines.push(ui.field('💡', 'Usage', `${ui.prefix}${command.pattern} ${command.use.trim()}`));
-        }
-        return citel.reply(ui.panel('HELP', '📖', lines));
+        if (command.use && command.use.trim()) lines.push(ui.line('💡', 'Usage', `${ui.prefix}${command.pattern} ${command.use.trim()}`));
+        return citel.reply(lines.join('\n'));
     },
 );

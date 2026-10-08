@@ -1,4 +1,4 @@
-const { cmd, TelegraPh, getBuffer, ui } = require('../lib');
+const { cmd, uploadFile, getBuffer, ui } = require('../lib');
 const fs = require('fs-extra');
 cmd(
     {
@@ -12,7 +12,7 @@ cmd(
         let mime = citel.quoted.mtype;
         if (!/image/.test(mime)) return citel.reply(`Reply to Photo With Caption *text*`);
         mee = await Void.downloadAndSaveMediaMessage(citel.quoted);
-        mem = await TelegraPh(mee);
+        mem = await uploadFile(mee);
         meme = await getBuffer(`https://api.memegen.link/images/custom/-/${text}.png?background=${mem}`);
         let buttonMessage = {
             image: meme,

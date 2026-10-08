@@ -9,13 +9,12 @@ cmd(
         filename: __filename,
     },
     async (Void, citel) => {
-        const lines = [ui.head('ALL COMMANDS', '📜'), ui.row()];
-        for (const group of groups()) {
-            lines.push(ui.section(`${group.label} · ${group.items.length}`, group.icon));
-            for (const item of group.items) lines.push(ui.row(`${ui.prefix}${item.pattern} · ${shortDesc(item.desc)}`));
-            lines.push(ui.row());
-        }
-        lines.push(ui.end());
-        return citel.reply(lines.join('\n'));
+        const blocks = groups().map((group) =>
+            [
+                `${group.icon} ${ui.font(group.label.toUpperCase())} · ${group.items.length}`,
+                ...group.items.map((item) => `▸ ${ui.prefix}${item.pattern} · ${shortDesc(item.desc)}`),
+            ].join('\n'),
+        );
+        return citel.reply(blocks.join('\n\n'));
     },
 );

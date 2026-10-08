@@ -1,19 +1,15 @@
 const { cmd } = require('../lib');
-const axios = require('axios');
+const { getJson } = require('../lib/api');
+
 cmd(
     {
         pattern: 'rwall',
-        alias: ['wallpaper'],
-        desc: 'Sends a Random Anime Wallpaper.',
-        category: 'fun',
+        desc: 'Send a random wallpaper',
+        category: 'misc',
         filename: __filename,
     },
     async (Void, citel) => {
-        try {
-            const { data } = await axios.get('https://nekos.life/api/v2/img/wallpaper');
-            return citel.imgurl(data.url, '*Here we go*');
-        } catch (e) {
-            return citel.reply('Error fetching wallpaper: ' + e.message);
-        }
+        const data = await getJson('https://wallhaven.cc/api/v1/search', { params: { categories: '111', purity: '100', sorting: 'random' } });
+        return Void.sendMessage(citel.chat, { image: { url: data.data[0].path } }, { quoted: citel });
     },
 );

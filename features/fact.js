@@ -1,14 +1,15 @@
-const { cmd } = require('../lib');
-const axios = require('axios');
+const { cmd, ui } = require('../lib');
+const { getJson } = require('../lib/api');
+
 cmd(
     {
         pattern: 'fact',
-        desc: 'Sends fact in chat.',
+        desc: 'Get a random fact',
         category: 'fun',
         filename: __filename,
     },
-    async (Void, citel, text) => {
-        const { data } = await axios.get(`https://nekos.life/api/v2/fact`);
-        return citel.reply(`*Fact:* ${data.fact}\n\n*𝐏𝐎𝐖𝐄𝐑𝐄𝐃 𝐁𝐘 𝐒𝐓𝐀𝐑*`);
+    async (Void, citel) => {
+        const data = await getJson('https://uselessfacts.jsph.pl/api/v2/facts/random', { params: { language: 'en' } });
+        return citel.reply(`${ui.font('Fact')}: ${data.text}`);
     },
 );

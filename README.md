@@ -1,23 +1,22 @@
-
 # Xlicon
 
 Hey, this is Xlicon.
 
-Xlicon is a WhatsApp bot built on Baileys. Every command lives in its own small file, so it is easy to read, fix and extend.
+Xlicon is a WhatsApp bot with more than 200 commands: menu, AI chat, downloaders, group tools, stickers, games and more. This guide gets it running.
 
-## Requirements
+## What you need
 
-- Node.js 20 or newer
-- A WhatsApp number to link (use a spare one)
+- A WhatsApp number to link. Use a spare number, not your main one.
+- A place to run it: a bot hosting panel, a VPS, or your own computer.
+- Node.js 20 or newer (panels and most hosts already have it).
 
-## Setup
+## 1. Get the files
 
-```
-npm install
-cp sample-config.env config.env
-```
+Download the project and upload it to your host. On a panel, upload the zip and extract it so that `index.js` sits in the main folder.
 
-Open `config.env` and set at least:
+## 2. Create `config.env`
+
+In the same folder as `index.js`, create a file named exactly `config.env` and paste this:
 
 ```
 OWNER_NAME="Your Name"
@@ -25,58 +24,97 @@ OWNER_NUMBER=2348012345678
 PAIRING_NUMBER=2348012345678
 ```
 
-Numbers use the country code and digits only.
+Write numbers with the country code and digits only. No `+`, no spaces.
 
-## Run
+- `OWNER_NUMBER`: who can use owner commands. Separate several numbers with commas.
+- `PAIRING_NUMBER`: the number the bot will link to. It can be the same as the owner number.
+
+Your host's variables page works too, if it has one. A full list of settings is in `sample-config.env`.
+
+## 3. Install and start
+
+On a panel, press Start. The panel installs everything by itself.
+
+On a VPS or your own computer:
 
 ```
+npm install
 npm start
 ```
 
-On the first start the bot prints a pairing code. In WhatsApp go to Linked devices, Link a device, Link with phone number, and type the code. The session is saved in `session/`, so the next start needs no code. To link a different number, change `PAIRING_NUMBER`.
+## 4. Link your number
 
-## Configuration
+The first time, the bot prints a pairing code in the console, something like `ABCD-1234`.
 
-Everything is read from `config.env` or the host's variables.
+1. Open WhatsApp on the phone with that number.
+2. Go to Settings, then Linked devices, then Link a device.
+3. Tap "Link with phone number instead".
+4. Type the code.
 
-- `OWNER_NAME`, `OWNER_NUMBER`: the owner shown in the menu and allowed to use owner commands.
-- `PREFIX`, `WORKTYPE`: command prefix and who can use the bot (`public` or `private`).
-- `MENU_CITY`: city for the time and weather in the menu. Default is Port Harcourt.
-- `MONGODB_URI`: optional. Without it the bot stores its data in `database/`.
-- `SESSION_DIR`: optional folder for the session, for hosts that keep a persistent disk.
+When you see LOGIN SUCCESSFUL, send `.menu` to the bot. You do not have to press Enter or type anything in the console.
 
-## Features
+The login is saved in the `session` folder, so the next start needs no code. To switch to another number, change `PAIRING_NUMBER` and restart. The old login is replaced.
 
-Each file in `features/` is one command.
+## Settings you may want
+
+Add these to `config.env`. All of them are optional.
+
+| Setting | What it does |
+| :-- | :-- |
+| `PREFIX` | The command symbol. Default is `.` |
+| `WORKTYPE` | `public` lets everyone use the bot, `private` only you |
+| `BOT_NAME` | The name shown in the menu |
+| `MENU_CITY` | City for the weather and time in the menu. Default is Port Harcourt |
+| `MONGODB_URI` | Your own MongoDB database. Without it the bot keeps its data in the `database` folder |
+| `SESSION_DIR` | Folder for the login, if your host has a disk that survives restarts |
+
+### AI commands
+
+`.chat`, `.chatgpt`, `.dalle` and the auto chatbot work best with a free key. Put at least one in `config.env`:
 
 ```
-features/
-  menu.js
-  ping.js
-  time.js
-  ...
+GEMINI_API_KEY=
+GROQ_API_KEY=
+OPENROUTER_API_KEY=
 ```
 
-A feature looks like this:
+Get a free Gemini key at aistudio.google.com/apikey, a Groq key at console.groq.com/keys, or an OpenRouter key at openrouter.ai/keys. The bot tries them in that order. With no key it uses a free public service that can be slow or limited.
 
-```js
-const { cmd, ui } = require('../lib');
+### Other optional keys
 
-cmd(
-    {
-        pattern: 'hello',
-        desc: 'Say hello',
-        category: 'general',
-        filename: __filename,
-    },
-    async (Void, citel) => citel.reply(ui.ok('Hello!')),
-);
-```
+| Setting | Needed for |
+| :-- | :-- |
+| `OMDB_API_KEY` | `.imdb` |
+| `TENOR_API_KEY` | `.emix` |
+| `JDOODLE_CLIENT_ID` and `JDOODLE_CLIENT_SECRET` | `.exec` |
+| `PASTEBIN_KEY` | `.pastebin` |
 
-Drop a file like that into `features/` and it shows up in `.menu` after a restart.
+A command that needs a key you did not set answers "We are working on this."
 
-Shared code lives in `lib/`. `lib/ui.js` holds the message style (the Goku look) used by every response, and `lib/shared/` holds data that several features use.
+## Using the bot
 
-## Notes
+- `.menu` shows every command. `.menu <category>` shows one category with short descriptions.
+- `.help <command>` explains a command.
+- `.ping`, `.alive`, `.time`, `.owner` are quick checks.
+- `.apicheck` (owner only) tests every online service from your server and shows which are down.
 
-This bot uses an unofficial WhatsApp client. WhatsApp can ban numbers that use one, so use a number you can afford to lose.
+## Hosts that erase files on restart
+
+Some free hosts (Heroku and many free tiers) wipe the folder every time the bot restarts. The bot then has to be linked again each time, and linking again and again can get a number flagged. If you use one of these:
+
+- Mount a persistent disk and point `SESSION_DIR` at it, or
+- Pick a host that keeps your files, such as a panel or a VPS.
+
+## If something goes wrong
+
+- **The console shows a menu instead of a code.** `PAIRING_NUMBER` was not found. The message under the menu tells you which folder the bot looked in for `config.env`. Make sure the file is there and spelled exactly right.
+- **The code does not work.** Codes expire after a short time. Restart the bot to get a new one, and enter it right away.
+- **The bot says it is logged out.** It removes the old login and starts a new pairing by itself.
+- **"MongoDB is not reachable."** The bot starts with its local files instead. Fix the connection (in Atlas, allow your server's IP under Network Access) or remove `MONGODB_URI`.
+- **A command says "We are working on this."** The online service behind it is down or needs a key. Run `.apicheck` to see which.
+
+## Good to know
+
+Xlicon uses an unofficial WhatsApp connection. WhatsApp can ban numbers that use one, so use a number you can afford to lose. Keep your `config.env` and `session` folder private, because anyone who gets them can control the linked account.
+
+Want to change or add commands? Every command is its own small file in the `features` folder.

@@ -14,7 +14,7 @@ cmd(
             return `${Math.floor(Math.random() * 10000)}${ext}`;
         };
         if (text.length === 0) {
-            reply(`❌ URL is empty! \nSend ${prefix}ytmp3 url`);
+            citel.reply(`❌ URL is empty! \nSend ${prefix}ytmp3 url`);
             return;
         }
         try {
@@ -25,7 +25,7 @@ cmd(
             }
             let infoYt = await ytdl.getInfo(urlYt);
             if (infoYt.videoDetails.lengthSeconds >= videotime) {
-                reply(`❌ I can't download that long video!`);
+                citel.reply(`❌ I can't download that long video!`);
                 return;
             }
             let titleYt = infoYt.videoDetails.title;
