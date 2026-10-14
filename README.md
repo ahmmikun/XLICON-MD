@@ -2,9 +2,44 @@
 
 Hey, this is Xlicon.
 
-Xlicon is a WhatsApp bot with more than 200 commands: a menu, AI chat, downloaders, group tools, stickers, games and more.
+Xlicon is a WhatsApp bot with more than 200 commands: a menu, AI chat, downloaders, group tools, stickers, games and more. Each command is its own small file, and the bot restarts itself if it crashes.
 
-This guide is for complete beginners. You do not need to know how to code. By the end you will have your own copy of the bot on GitHub and running on a server, answering messages.
+## Choose your path
+
+| If you... | Go here |
+| :-- | :-- |
+| **Have deployed bots before** | [Quick start](#quick-start-for-experienced-users), then [Settings](#settings-reference), [How it runs](#how-it-runs) and [Add a feature](#add-a-feature) |
+| **Are new to GitHub, servers or code** | Read from [Read this first](#1-read-this-first) and follow the steps in order |
+| **Just want to fix a problem** | [When something goes wrong](#13-when-something-goes-wrong) |
+
+---
+
+## Quick start for experienced users
+
+You need Node.js 20 or newer and a spare WhatsApp number.
+
+```
+git clone https://github.com/YOUR-NAME/xlicon-bot.git
+cd xlicon-bot
+npm install
+cp sample-config.env config.env      # set OWNER_NAME, OWNER_NUMBER, PAIRING_NUMBER
+npm start
+```
+
+- `npm start` runs `node index.js`. That is a small supervisor that starts the real bot (`lib/client.js`) and restarts it after a crash.
+- Put settings in `config.env` next to `index.js`, or in your panel's variables. Numbers are country code plus digits, with no `+`.
+- First start with `PAIRING_NUMBER` set prints a pairing code. In WhatsApp: Linked devices, Link a device, Link with phone number instead. No keyboard input is needed, so it works on panels with a dead console.
+- The login is saved in `./session` (or `SESSION_DIR`). The next start resumes it. Change `PAIRING_NUMBER` to replace it.
+- On a panel: set the startup file to `index.js`, upload the files, create `config.env`, press Start.
+- Never commit `config.env`, `session/` or `database/`. They are in `.gitignore`.
+
+Next: [Settings](#settings-reference) · [How it runs](#how-it-runs) · [Add a feature](#add-a-feature) · [Hosting notes](#hosting-notes)
+
+---
+
+# Beginner guide
+
+If you already know your way around, skip to the [Reference](#reference-for-developers).
 
 ## Contents
 
@@ -83,7 +118,7 @@ You can run the bot without GitHub. But keeping your copy on GitHub gives you a 
 5. Select everything inside that folder and drag it into the GitHub page.
 6. Wait until the upload finishes. Press **Commit changes**.
 
-**Important:** The GitHub website upload ignores the privacy rules. Never drag a `config.env` file, a `session` folder or a `database` folder into it. If you already did, delete them on GitHub and read section 13.
+**Important:** The GitHub website upload ignores the privacy rules. Never drag a `config.env` file, a `session` folder or a `database` folder into it. If you already did, delete them on GitHub and read [section 13](#13-when-something-goes-wrong).
 
 ### The same thing with GitHub Desktop
 
@@ -130,17 +165,7 @@ Rules for numbers: country code first, digits only. No `+`, no spaces, no dashes
 - `OWNER_NUMBER` is who may use owner commands. Use commas for more than one number.
 - `PAIRING_NUMBER` is the WhatsApp number the bot will log in as. It can be the same number as the owner.
 
-### Other settings you may want
-
-| Setting | What it does |
-| :-- | :-- |
-| `PREFIX` | The symbol before commands. Default is `.` |
-| `WORKTYPE` | `public` lets everyone use the bot. `private` only you. |
-| `BOT_NAME` | The name shown in the menu. |
-| `MENU_CITY` | City for the time and weather in the menu. Default is Port Harcourt. |
-| `MONGODB_URI` | Your own MongoDB database. Leave it empty and the bot keeps its data in the `database` folder. |
-| `SESSION_DIR` | A folder for the login, if your host has a disk that survives restarts. |
-| `MAX_MEMORY_MB` | Memory limit of your server, if the bot does not detect it. |
+Many more settings exist. The common ones are in the [Settings reference](#settings-reference).
 
 ### Free keys that make the AI commands work
 
@@ -175,9 +200,7 @@ The first start installs the pieces the bot needs. This takes a minute or two. W
 
 You do not need a keyboard. The panel does not have to accept typing, because the bot reads your number from `config.env`.
 
-### Prefer to pull the code from GitHub?
-
-If your panel supports it, you can put your private GitHub repo on the server instead of uploading a zip. Ask your host how, because every panel does this differently. Remember: `config.env` is never on GitHub, so you still create it on the server by hand.
+If your panel can load files straight from a GitHub repo, you can use your private repo instead of a zip. Ask your host how, because every panel does this differently. `config.env` is never on GitHub, so you still create it on the server by hand.
 
 ## 7. Link your WhatsApp number
 
@@ -310,7 +333,7 @@ npm install
 npm start
 ```
 
-4. Link your number as in section 7.
+4. Link your number as in [section 7](#7-link-your-whatsapp-number).
 
 Your computer must stay on for the bot to stay online. A server is better for that.
 
@@ -340,6 +363,131 @@ Treat it as leaked. Delete the file from GitHub. Then unlink the device: in What
 **The message says "Cannot find module".**
 The pieces were not installed. On a panel, restart the server. On your own computer, run `npm install` again.
 
+---
+
+# Reference for developers
+
+## Settings reference
+
+Set these in `config.env` or in your host's variables. If a setting is missing, the default below applies. A few defaults differ from `sample-config.env`, so check this table if a behavior surprises you.
+
+**Identity and linking**
+
+| Setting | Default | Notes |
+| :-- | :-- | :-- |
+| `OWNER_NAME` | `Xcelsama` | Shown in the menu, alive and owner card. |
+| `OWNER_NUMBER` | empty | Comma separated. The linked number is always an owner too. |
+| `PAIRING_NUMBER` | empty | Number to link by pairing code. A different number than the saved session replaces it. |
+| `SESSION_DIR` | `./session` | Point it at a persistent disk if the project folder is wiped on deploy. |
+| `USE_QR`, `USE_PAIRING_CODE` | unset | Skip the connection menu. The CLI flags `--use-qr` and `--use-pairing-code` do the same. |
+| `SESSION_ID` | unused | Removed. Sessions are created by pairing. |
+
+**Behavior**
+
+| Setting | Default | Notes |
+| :-- | :-- | :-- |
+| `PREFIX` | `.` | One or more characters. |
+| `WORKTYPE` | `public` | `public` or `private`. |
+| `BOT_NAME` | `Xlicon-Md` | Shown in the menu header. |
+| `MENU_CITY` | `Port Harcourt` | City for the time and weather in the menu. |
+| `WARN_COUNT` | `3` | Warnings before action. |
+| `DISABLE_PM` | `false` | Ignore private chats. |
+| `ANTILINK_VALUES` | `chat.whatsapp.com` | Comma separated link patterns. |
+| `ANTILINK_ACTION` | `remove` | What antilink does. |
+| `ANTI_BAD_WORD` | `nbwoed` | Words the bad word filter reacts to. |
+| `AUTO_READ_STATUS`, `AUTO_STATUS_SAVER` | `true` | Read and save statuses. |
+| `AUTO_REACTION`, `READ_MESSAGE`, `ALWAYS_ONLINE` | `true` | |
+| `AUTO_BIO`, `STARTUP_MESSAGE` | `false`, `true` | Bio updates, online notice to the owner. |
+| `PACK_NAME`, `PACK_AUTHER` | empty | Sticker pack name and author. |
+| `THUMB_IMAGE` | built in image | Link preview image. |
+| `PORT` | `5000` | Port of the small dashboard server. |
+
+**Storage**
+
+| Setting | Default | Notes |
+| :-- | :-- | :-- |
+| `MONGODB_URI` | empty | Optional. Without it, data lives in `database/`. If it is set but unreachable, the bot falls back to local files at startup. |
+
+**Online services and keys**
+
+| Setting | Used for |
+| :-- | :-- |
+| `GEMINI_API_KEY`, `GROQ_API_KEY`, `OPENROUTER_API_KEY`, `OPENAI_API_KEY` | AI commands and the auto chatbot, tried in this order. |
+| `GEMINI_MODEL`, `GROQ_MODEL`, `OPENROUTER_MODEL`, `OPENAI_MODEL`, `OPENAI_IMAGE_MODEL` | Override the model each provider uses. |
+| `OMDB_API_KEY` | `.imdb` |
+| `TENOR_API_KEY` | `.emix` |
+| `JDOODLE_CLIENT_ID`, `JDOODLE_CLIENT_SECRET` | `.exec` |
+| `PASTEBIN_KEY` | `.pastebin` |
+
+**Runtime limits**
+
+| Setting | Default | Notes |
+| :-- | :-- | :-- |
+| `MAX_MEMORY_MB` | detected | Container limit. Falls back to the smaller of system RAM and 1024 MB. |
+| `COMMAND_TIMEOUT_SECONDS` | `120` | A command running longer is cancelled. |
+| `MENU_TIMEOUT_MS` | `45000` | How long the connection menu waits before falling back to QR. |
+
+## How it runs
+
+**Supervisor (`index.js`).** It reads `config.env`, checks that MongoDB is reachable for 8 seconds (otherwise it clears the URI and uses local files), then starts `lib/client.js` as a child process. Node's heap is capped at 55% of the memory limit. The child exits with code 1 if its memory use passes 85% of the limit, and the supervisor restarts it. The supervisor restarts the bot after any exit, kill or crash, with a growing delay after rapid repeats, and writes each stop to `logs/crash.log`. Exit code `99` (the menu's Exit option) or `SIGINT` or `SIGTERM` stops it for good.
+
+**Connection choice.** On start the bot decides in this order:
+
+1. A saved session exists and `PAIRING_NUMBER` is a different number: wipe the session and pair the new number.
+2. A saved session exists: resume it.
+3. `PAIRING_NUMBER` is set: print a pairing code.
+4. Otherwise show the menu, and fall back to QR after `MENU_TIMEOUT_MS`.
+
+If WhatsApp logs the bot out, it wipes the session and starts a new pairing.
+
+**Features.** When the connection opens, every `features/*.js` file is loaded. The registry (`lib/registry.js`) wraps each command: any thrown error or a run longer than `COMMAND_TIMEOUT_SECONDS` is logged to `logs/errors.log`, and the sender gets "This feature is being fixed." Listeners (`on: 'text'` and `on: 'body'`) log errors silently. Plugins installed with `.install` are written as `features/plugin_*.js` and are git-ignored.
+
+**Memory.** The message store keeps 50 messages for each of the 150 most recent chats and at most 5000 contacts. It is trimmed and saved every 5 minutes.
+
+**AI.** `lib/ai.js` tries Gemini, then Groq, then OpenRouter, then OpenAI, using only the providers you set a key for. A keyless public service is the last resort. Images try OpenAI, then the same keyless service. If none answer, the command says it is being fixed.
+
+**Online services.** `.apicheck` (owner only) probes every service the bot uses from the bot's own network. Commands that depend on a dead service answer "This feature is being fixed" instead of failing.
+
+**Logs.** `logs/errors.log` and `logs/crash.log` are cut when they pass 512 KB.
+
+## Add a feature
+
+A feature is one file in `features/` that calls `cmd(info, handler)`.
+
+```js
+const { cmd, ui } = require('../lib');
+
+cmd(
+    {
+        pattern: 'hello',          // the word after the prefix
+        alias: ['hi'],             // optional extra names
+        desc: 'Say hello',         // shown in .menu <category> and .help
+        use: '[name]',             // optional usage hint for .help
+        category: 'general',       // menu group
+        filename: __filename,      // used by .file
+    },
+    async (Void, citel, text, { isCreator }) => {
+        return citel.reply(ui.ok(`Hello ${text.trim() || citel.pushName}!`));
+    },
+);
+```
+
+- Use `{ on: 'text' }` or `{ on: 'body' }` instead of `pattern` for a listener that runs on every message.
+- Helpers: `lib/ui.js` (`ok`, `fail`, `info`, `warn`, `line`, `font`, `text.owner`, `text.group`, `text.admin`), `lib/ai.js` (`ask`, `image`), `lib/api.js` (`http`, `getJson`, `getBuffer`).
+- The menu and `.help` read the registry, so a new file appears after a restart with no other change.
+- Keep files small and self-contained. Data shared between several features goes in `lib/shared/`.
+- Owner details come from `Config.owner` (`name`, `number`, `numbers`). Do not hard-code them.
+
+## Hosting notes
+
+- **Panel (Pterodactyl style).** Startup file `index.js`, create `config.env` in the main folder. The console does not need to accept input.
+- **VPS.** `npm install && npm start`. The supervisor already restarts the bot after crashes. To also survive reboots, run it under systemd or `pm2 start index.js`.
+- **Replit.** `.replit` runs `node index.js`.
+- **Docker and Heroku.** `lib/Dockerfile` (used by `heroku.yml`) clones the upstream repository inside the image, so it deploys that code and not your copy. Change the `git clone` URL to your own repo before using it. Platforms that erase files on every restart lose the session, so set `SESSION_DIR` to a persistent disk or expect to pair again after each restart.
+- **`lib/start.sh`** is an older restart loop. You do not need it.
+
 ## Good to know
 
 Xlicon uses an unofficial WhatsApp connection. WhatsApp can ban numbers that use one, so use a number you can afford to lose. Keep `config.env` and the `session` folder private.
+
+[Back to the top](#choose-your-path)
