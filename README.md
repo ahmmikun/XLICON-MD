@@ -1,432 +1,345 @@
-## `XLICON-MD`
-<div align="left">
-<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Ribeye&size=50&pause=1000&color=ff0000&center=true&width=900&height=100&lines=Its XLICON-MD;Multi+Device+Whatsapp+Bot;Developed+By+SALMAN AHMAD" alt="Typing SVG" /></a>
-  
-  
-<p align="center">
-  <a href="">
-    <img alt=Support height="300" src="https://i.imgur.com/tQQyQwp.jpeg"> 
-    </p>
-    <h1 align="center">XLICON-1.O<br></h1>
-    
-   </a>
-</p>
-  
-<p align="center">
-<a href="https://github.com/ahmmikun"><img title="Author" src="https://img.shields.io/badge/XLICON-BOT-black?style=for-the-badge&logo=whatsapp"></a>
-<p/>
-<p align="center">
-<a href="https://github.com/ahmmikun?tab=followers"><img title="Followers" src="https://img.shields.io/github/followers/ahmmikun?label=Followers&style=social"></a>
-<a href="https://github.com/ahmmikun/XLICON-MD/stargazers/"><img title="Stars" src="https://img.shields.io/github/stars/ahmmikun/XLICON-MD?&style=social"></a>
-<a href="https://github.com/ahmmikun/XLICON-MD/network/members"><img title="Fork" src="https://img.shields.io/github/forks/ahmmikun/XLICON-MD?style=social"></a>
-<a href="https://github.com/ahmmikun/XLICON-MD/watchers"><img title="Watching" src="https://img.shields.io/github/watchers/ahmmikun/XLICON-MD?label=Watching&style=social"></a>
-</p>
+# Xlicon
 
-<p align="center"><img src="https://profile-counter.glitch.me/{ahmmikun}/count.svg" alt="SALMAN AHMAD :: Visitor's Count" /></p>
+Hey, this is Xlicon.
 
-</br>
+Xlicon is a WhatsApp bot with more than 200 commands: a menu, AI chat, downloaders, group tools, stickers, games and more.
 
-<h2 align="center"> Star the repo if u like it🌟
-</h2>
+This guide is for complete beginners. You do not need to know how to code. By the end you will have your own copy of the bot on GitHub and running on a server, answering messages.
 
-## `Notice`
+## Contents
 
-This Bot Is `No More Working` Fine And Have Many `Errors` (like **Mongodb Error**)...
-<br>
+1. [Read this first](#1-read-this-first)
+2. [Words you will see](#2-words-you-will-see)
+3. [What is inside the project](#3-what-is-inside-the-project)
+4. [Make a GitHub account and your own copy](#4-make-a-github-account-and-your-own-copy)
+5. [Set up your settings](#5-set-up-your-settings)
+6. [Run the bot on a server (panel)](#6-run-the-bot-on-a-server-panel)
+7. [Link your WhatsApp number](#7-link-your-whatsapp-number)
+8. [Using the bot](#8-using-the-bot)
+9. [Keeping it online](#9-keeping-it-online)
+10. [Change the bot and add a command](#10-change-the-bot-and-add-a-command)
+11. [Update the bot later](#11-update-the-bot-later)
+12. [Run it on your own computer](#12-run-it-on-your-own-computer)
+13. [When something goes wrong](#13-when-something-goes-wrong)
 
-Don't Deploy This Bot...
-<br>
+## 1. Read this first
 
-You Guyz Can Try My Other Bots Like ***XLICON-V2*** & ***XLICON-V3*** Which Have Many `Advance Features` Then This Bot
-<br>
+- Use a **spare WhatsApp number**. Xlicon uses an unofficial WhatsApp connection, and WhatsApp can ban numbers that use one.
+- Your settings file and your login folder are **passwords**. Anyone who gets them can control the linked WhatsApp account. Never upload them to GitHub and never post them in a chat or a screenshot.
+- Go slowly. Do one step, check it worked, then do the next.
 
-[*XLICON-V2*](https://github.com/ahmmikun/XLICON-V2-MD)
-<br>
-[*XLICON-V3*](https://github.com/ahmmikun/XLICON-V3-MD)
-<br>
+## 2. Words you will see
 
----
-## 🛠️ `Installation Procedure`
+| Word | What it means |
+| :-- | :-- |
+| **Bot** | A program that reads WhatsApp messages and replies by itself. |
+| **GitHub** | A website where code is stored. Think of it as Google Drive for code. |
+| **Repository (repo)** | One project folder on GitHub. |
+| **Fork** | Your own copy of someone else's repo. |
+| **Commit** | A saved version of your changes, with a short note about what changed. |
+| **Node.js** | The tool that runs the bot. Servers already have it. |
+| **npm** | Installs the extra pieces the bot needs. `npm install` does that. |
+| **Terminal / console** | A text window where you type commands. A bot panel has one called Console. |
+| **Panel** | A website where you rent a small server and start or stop your bot. |
+| **Config file** | A text file with your settings. Here it is called `config.env`. |
+| **Pairing code** | An 8-character code that links the bot to your WhatsApp. |
+| **Session** | The saved WhatsApp login. It lives in a folder called `session`. |
 
-
-❏FORK THE REPOSITORY 
-  <a href="https://github.com/ahmmikun/XLICON-MD/fork" target="_blank">
-  <img src="https://img.shields.io/badge/FORK XLICON-black?style=for-the-badge&logo=render" alt="Authenticate With WhatsApp" width="170" height="34">
-</a>
-
-
-
-
-❏GET SESSION ID (SCAN-QR) 
-<a href="https://xlicon-qr-3282f577cf2e.herokuapp.com/" target="_blank">
-  <img src="https://img.shields.io/badge/SCAN QR-black?style=for-the-badge&logo=render" alt="Authenticate With WhatsApp" width="170" height="34">
-</a>
-
-
-
-
-❑SCAN QR (REPLIT)
-<a href="https://replit.com/@S4SalmanYt/XLICON-MD-QR-V4" target="_blank">
-  <img src="https://img.shields.io/badge/SCAN QR-black?style=for-the-badge&logo=render" alt="Authenticate With WhatsApp" width="170" height="34">
-</a>
-
-
-    
-
-
-
-## `Features`
-
-- 275+ Awesome Commands
-- 24/7 Support
-- Simple Commands
-- Easy Deploy
-- Anime Themes
-- Best for GroupWorks
-- Make your boring whatsapp fun
-
-
-
-
-## `MONGODB URL`
-
-
-●.  ***Get a Mongodb urL from [Clever-Cloud](https://api.clever-cloud.com/v2/session/login).***
-
-●.  ***Get a Mongodb urL from [railway.app](https://railway.app).***
-
-
-
+## 3. What is inside the project
 
 ```
-mongodb+srv://salmanahmad:s4salmanyt@cluster0.szcj2eo.mongodb.net/?retryWrites=true&w=majority
+XLICON-MD/
+  index.js            starts the bot and restarts it if it crashes
+  config.js           reads your settings
+  sample-config.env   an example settings file
+  features/           every command is its own small file here
+  lib/                shared code (message style, AI, database, and so on)
+  package.json        the list of pieces the bot needs
 ```
 
-| Parameter | Type     | Description                |
-| :-------- | :------- | :------------------------- |
-| `MONGODB_URL` | `string` | **Required**. Your Bot Cannot run without this|
+These folders appear after the bot runs. They are created for you:
 
-## `Installation`
+```
+  session/            your saved WhatsApp login (secret)
+  database/           the bot's saved data
+  logs/               error notes, handy when something breaks
+```
 
-1.Replit Installation
+## 4. Make a GitHub account and your own copy
 
-Paste This on the replit shell to run the Bot
+You can run the bot without GitHub. But keeping your copy on GitHub gives you a safe backup, lets you change the bot, and lets you update it with one click.
+
+### Create the account
+
+1. Go to github.com and press **Sign up**.
+2. Use an email you can open, pick a username, and verify the email.
+
+### Put the project on GitHub (no coding needed)
+
+1. On GitHub, press the **+** at the top right, then **New repository**.
+2. Name it, for example `xlicon-bot`. Choose **Private**. Press **Create repository**.
+3. On the next page press **uploading an existing file**.
+4. On your computer, unzip the project. Open the folder that has `index.js` in it.
+5. Select everything inside that folder and drag it into the GitHub page.
+6. Wait until the upload finishes. Press **Commit changes**.
+
+**Important:** The GitHub website upload ignores the privacy rules. Never drag a `config.env` file, a `session` folder or a `database` folder into it. If you already did, delete them on GitHub and read section 13.
+
+### The same thing with GitHub Desktop
+
+GitHub Desktop is a free app that does this with buttons.
+
+1. Install it from desktop.github.com and sign in.
+2. Choose **File**, then **Add local repository**, and pick the project folder. If it asks to create a repository, say yes.
+3. Type a short note, for example `first version`, and press **Commit to main**.
+4. Press **Publish repository** and keep **Keep this code private** ticked.
+
+Each time you change something later, repeat the last two steps. This keeps your private files out, because the project already lists them in a file called `.gitignore`.
+
+### The same thing with commands
+
+Install Git from git-scm.com, open a terminal in the project folder, then run:
+
+```
+git init
+git add .
+git commit -m "first version"
+git branch -M main
+git remote add origin https://github.com/YOUR-NAME/xlicon-bot.git
+git push -u origin main
+```
+
+Replace `YOUR-NAME` and `xlicon-bot` with your own. GitHub asks you to sign in the first time.
+
+## 5. Set up your settings
+
+All your settings live in one file named `config.env`. It stays on your server only.
+
+1. In the project folder, make a copy of `sample-config.env` and name the copy exactly `config.env`.
+2. Open it with Notepad or any text editor and fill in at least these three lines:
+
+```
+OWNER_NAME="Your Name"
+OWNER_NUMBER=2348012345678
+PAIRING_NUMBER=2348012345678
+```
+
+Rules for numbers: country code first, digits only. No `+`, no spaces, no dashes. `2348012345678` is right. `+234 801 234 5678` is wrong.
+
+- `OWNER_NAME` is shown in the menu and the owner card.
+- `OWNER_NUMBER` is who may use owner commands. Use commas for more than one number.
+- `PAIRING_NUMBER` is the WhatsApp number the bot will log in as. It can be the same number as the owner.
+
+### Other settings you may want
+
+| Setting | What it does |
+| :-- | :-- |
+| `PREFIX` | The symbol before commands. Default is `.` |
+| `WORKTYPE` | `public` lets everyone use the bot. `private` only you. |
+| `BOT_NAME` | The name shown in the menu. |
+| `MENU_CITY` | City for the time and weather in the menu. Default is Port Harcourt. |
+| `MONGODB_URI` | Your own MongoDB database. Leave it empty and the bot keeps its data in the `database` folder. |
+| `SESSION_DIR` | A folder for the login, if your host has a disk that survives restarts. |
+| `MAX_MEMORY_MB` | Memory limit of your server, if the bot does not detect it. |
+
+### Free keys that make the AI commands work
+
+`.chat`, `.chatgpt`, `.dalle` and the auto chatbot work best with a free key. Put at least one in `config.env`:
+
+```
+GEMINI_API_KEY=
+GROQ_API_KEY=
+OPENROUTER_API_KEY=
+```
+
+- Gemini: free at aistudio.google.com/apikey
+- Groq: free at console.groq.com/keys
+- OpenRouter: free at openrouter.ai/keys
+
+The bot tries them in that order. With no key it uses a free public service that can be slow or limited.
+
+Some other commands need their own optional keys: `OMDB_API_KEY` for `.imdb`, `TENOR_API_KEY` for `.emix`, `JDOODLE_CLIENT_ID` and `JDOODLE_CLIENT_SECRET` for `.exec`, `PASTEBIN_KEY` for `.pastebin`. Without the key, that one command says "This feature is being fixed."
+
+## 6. Run the bot on a server (panel)
+
+These steps match most bot hosting panels. The words on the buttons may differ a little.
+
+1. Create a server on your panel and choose **Node.js**. Pick the newest version offered, 20 or higher.
+2. Open the **Files** page of your server.
+3. Upload the project zip and **Unarchive** it. Make sure `index.js` ends up in the main folder, not inside another folder. If it is inside a folder, move everything up one level.
+4. Create the settings file: press **New file**, name it exactly `config.env`, paste your settings from section 5, and save.
+5. Open the **Startup** page. The startup file must be `index.js`. Leave the rest as it is.
+6. Open the **Console** and press **Start**.
+
+The first start installs the pieces the bot needs. This takes a minute or two. Wait for it to finish.
+
+You do not need a keyboard. The panel does not have to accept typing, because the bot reads your number from `config.env`.
+
+### Prefer to pull the code from GitHub?
+
+If your panel supports it, you can put your private GitHub repo on the server instead of uploading a zip. Ask your host how, because every panel does this differently. Remember: `config.env` is never on GitHub, so you still create it on the server by hand.
+
+## 7. Link your WhatsApp number
+
+The first time, the console prints a box with a pairing code, like this:
+
+```
+WHATSAPP PAIRING CODE
+>>>  ABCD-1234  <<<
+```
+
+1. Open WhatsApp on the phone that has the `PAIRING_NUMBER` number.
+2. Tap the three dots, then **Linked devices**, then **Link a device**.
+3. Tap **Link with phone number instead**.
+4. Type the code from the console. Do it quickly, because the code expires after a short time.
+
+When the console shows **LOGIN SUCCESSFUL**, it worked. From another WhatsApp number, send `.menu` to your bot number.
+
+Your login is saved in the `session` folder, so the next start needs no code. To switch to a different number, change `PAIRING_NUMBER` in `config.env` and restart. The old login is replaced.
+
+## 8. Using the bot
+
+| Command | What it does |
+| :-- | :-- |
+| `.menu` | Shows every command by category. |
+| `.menu group` | Shows one category with short descriptions. |
+| `.help ping` | Explains how a command works. |
+| `.ping` | Checks that the bot is fast and alive. |
+| `.alive` | Shows the bot's status. |
+| `.time` | Shows the time of your city. |
+| `.owner` | Sends the owner contact. |
+| `.apicheck` | Owner only. Tests every online service from your server. |
+
+If a command answers **This feature is being fixed**, that command hit a problem or the online service behind it is down. The bot itself keeps working.
+
+## 9. Keeping it online
+
+Xlicon is built to stay on for days:
+
+- If the bot crashes or runs out of memory, it starts again by itself in a few seconds. You stay logged in.
+- If a command breaks, that command is cancelled and the bot keeps going.
+- Old chat history is trimmed, so memory does not grow forever.
+
+Error notes are saved in the `logs` folder:
+
+- `logs/errors.log` lists commands that failed.
+- `logs/crash.log` lists every time the bot stopped and restarted.
+
+If the panel shows OFFLINE, open these two files first. They usually say why. Some free hosts also stop servers that are idle or that ran out of free hours. No code can prevent that. If it keeps happening, read your host's rules.
+
+## 10. Change the bot and add a command
+
+You do not need to be a programmer to try this. Take it in small steps and test after each one.
+
+### Where things live
+
+- Every command is one file in the `features` folder. `ping.js` is the `.ping` command.
+- The look of the messages (icons and the special font) is in `lib/ui.js`.
+- To change the menu, open `features/menu.js`.
+
+### Edit with VS Code
+
+1. Install VS Code from code.visualstudio.com. It is a free text editor made for code.
+2. Choose **File**, then **Open Folder**, and pick the project folder.
+3. Click a file in the list on the left to open it.
+
+### Add your first command
+
+1. In the `features` folder, make a new file named `hello.js`.
+2. Paste this:
+
+```js
+const { cmd, ui } = require('../lib');
+
+cmd(
+    {
+        pattern: 'hello',
+        desc: 'Say hello',
+        category: 'general',
+        filename: __filename,
+    },
+    async (Void, citel, text) => {
+        const name = text.trim() || citel.pushName;
+        return citel.reply(ui.ok(`Hello ${name}!`));
+    },
+);
+```
+
+3. Restart the bot. Send `.hello` and then `.hello Goku`. It answers `Hello Goku!`. It also shows up in `.menu` by itself.
+
+What each part means:
+
+- `pattern` is the word people type after the prefix. `hello` becomes `.hello`.
+- `desc` is the short description shown in the menu and in `.help`.
+- `category` decides which group it appears in.
+- `citel.reply(...)` sends a reply.
+- `text` is whatever the person typed after the command.
+- `ui.ok(...)` adds the green tick. `ui.fail(...)` adds a red cross.
+
+If your new command has a mistake, the bot does not crash. It answers "This feature is being fixed" and writes the reason in `logs/errors.log`.
+
+### Save your change to GitHub
+
+With GitHub Desktop: write a note, press **Commit to main**, then **Push origin**. With commands:
+
+```
+git add .
+git commit -m "added the hello command"
+git push
+```
+
+Then upload the changed file to your server's `features` folder and restart the bot.
+
+## 11. Update the bot later
+
+1. Download or copy the new files.
+2. Replace the old ones. Do not delete your `config.env`, `session` or `database`.
+3. Delete any file the update notes say was removed.
+4. Restart the bot.
+
+If your server loads files from GitHub, pushing to GitHub and restarting is enough.
+
+## 12. Run it on your own computer
+
+1. Install Node.js from nodejs.org. Choose the LTS version.
+2. Open a terminal in the project folder.
+3. Run:
 
 ```
 npm install
+npm start
 ```
 
-After this fill the vars by your own information and paste this JSON to your Replit shell
+4. Link your number as in section 7.
 
-```
-{
-  "SESSION_ID": "ID-Here",
-  "OWNER_NUMBER": "92xxxxxxxxxx",
-  "OWNER_NAME": "SalmanAhmad",
-  "OPENAI_API_KEY": "null",
-  "MONGODB_URI": "required",
-  "PACK_INFO": "WABOT;Xlicon",
-  "PREFIX": "."
-   
-}
-```
+Your computer must stay on for the bot to stay online. A server is better for that.
 
+## 13. When something goes wrong
 
-2.Okteto Installation
-Go to Okteto
+**The console shows a menu asking for 1, 2 or 3.**
+`PAIRING_NUMBER` was not found. The message below the menu tells you which folder it looked in. Check that `config.env` is in that folder and the name is exactly right. It must not be `config.env.txt`.
 
+**The pairing code does not work.**
+Codes expire fast. Restart the bot to get a new one and type it right away. Do not restart again and again, because many link attempts can get a number flagged.
 
-```
-Login with your github
-Click Launch Dev Environment
-Choose your repo
-```
+**It says LOGIN SUCCESSFUL but never answers.**
+Make sure you use the latest files. An older version crashed on every message when the `database` folder was new.
 
+**It says "MongoDB is not reachable".**
+The bot starts with its own local files instead. To use MongoDB, allow your server's address in your MongoDB settings. Or remove `MONGODB_URI`.
 
-3.Heroku Installation 
-[HEROKU Tutorial](https://youtu.be/hH2qZyUjuF4?si=vqpl-caoBSkpcVNH)
+**A command says "This feature is being fixed."**
+The command hit a problem, or the online service behind it is down. Run `.apicheck` to see which services are down.
 
+**It went OFFLINE.**
+Read `logs/crash.log` and `logs/errors.log`. The bot restarts itself after crashes. If it stays offline, check your host's rules and memory limit.
 
-4.Deploy On Vps
-[Deploy on VPS or PC.](https://github.com/ahmmikun/XLICON-MD/blob/main/deploy-on-vps.md)
+**I uploaded `config.env` or `session` to GitHub by mistake.**
+Treat it as leaked. Delete the file from GitHub. Then unlink the device: in WhatsApp go to **Linked devices** and log out the bot. Delete the `session` folder on your server, restart, and link again. Change any API keys that were inside `config.env` at the websites that issued them.
 
+**The message says "Cannot find module".**
+The pieces were not installed. On a panel, restart the server. On your own computer, run `npm install` again.
 
-  ........................................................
-  
-  
-  
-  ## `DEPLOYMENTS`
-  
-  
-  
-  <details close>
-<summary>Click to choose your favourite platform to Deploy</summary>
- 
-<br><br>   
-   
-<h4 align="center"> Deploy on Repl.it
-</h4>
+## Good to know
 
-<p align="center" >
-    <a href="https://repl.it/github/ahmmikun/XLICON-MD">
-    <img src="https://repl.it/badge/github/quiec/whatsasena" width="170px" alt="Deploy on REPLIT" >
-    </a>
-</p>
-
-<p align="center" >
-    <br>
-    __________________________
-    <br>
-</p>
-
-
-
-<br>
- 
-<h4 align="center"> Deploy on CodesSpace
-</h4>
-
-</p>
-
-<p align="center" >
-    <a href="https://github.com/codespaces/new">
-    <img src="https://img.shields.io/badge/DEPLOY CODESPACE-h?color=black&style=for-the-badge&logo=visualstudiocode" width="170px" alt="Deploy on CodesSpaces" >
-    </a>
-
-</p>
-
-<p align="center" >
-    <br>
-    __________________________
-    <br>
-</p>
-
-
-
-<br>
- 
-<h4 align="center"> Deploy on Heroku
-</h4>
-
-</p>
-
-<p align="center" >
-    <a href="https://heroku.com/deploy?template=https://github.com/ahmmikun/XLICON-MD">
-    <img src="https://www.herokucdn.com/deploy/button.png" width="170px" alt="Deploy on Heroku" >
-    </a>
-
-</p>
-
-<p align="center" >
-    <br>
-    __________________________
-    <br>
-</p>
-
-
-
-
-<br>
- 
-<h4 align="center"> Deploy On Koyeb
-</h4>
-
-</p>
-
-<p align="center" >
-    <a href="https://app.koyeb.com/apps/deploy?type=git&repository=github.com/https://github.com/ahmmikun/XLICON-MD&branch=main&build_command=npm%20i&run_command=npm%20start&env[SESSION_ID]&env[OWNER_NUMBER]&env[MONGODB_URI]&&env[OWNER_NAME]&env[PREFIX]=.&env[THUMB_IMAGE]=https://telegra.ph/file/3c341828d86ee7a89c73f.jpg&env[email]=infiniteytff@gmail.com&env[global_url]=instagram.com/sla.sher_&env[FAKE_COUNTRY_CODE]=974&env[READ_MESSAGE]=false&env[DISABLE_PM]=false&env[ANTI_BAD_WORD]=fuck&env[WORKTYPE]=public&env[THEME]=GOJO&env[PACK_INFO]=XLICON;MD&name=xliconuser000&env[KOYEB_NAME]=profilecorruptederror&env[ANTILINK_VALUES]=chat.whatsapp.com&env[PORT]=8000">
-    <img src="https://www.koyeb.com/static/images/deploy/button.svg" width="170px" alt="Deploy on Koyeb" >
-    </a>
-
-</p>
-
-<p align="center" >
-    <br>
-    __________________________
-    <br>
-</p>
-
-
-
-<br>
-
-
-<h4 align="center"> Deploy on RailWay
-</h4>
-  
-<p align="center">
-    <a href="https://railway.app/new">
-    <p align="center"><a href="https://railway.app/new"> <img src="https://img.shields.io/badge/DEPLOY RAILWAY-h?color=black&style=for-the-badge&logo=Railway"></a>
-    
-</p>
-
-<p align="center" >
-    <br>
-    __________________________
-    <br>
-
-</p>
-
-
-
-
-<br>
-
-
-<h4 align="center"> Deploy on Okteto
-</h4>
-  
-<p align="center">
-    <a href="https://cloud.okteto.com">
-    <img src="https://okteto.com/develop-okteto.svg" alt="Deploy on Okteto" width="170px">
-    </a>
-    
-</p>
-
-<p align="center" >
-    <br>
-    __________________________
-    <br>
-
-</p>
-
-
-
-<br>
-
-<h4 align="center"> Deploy on Mogenius
-</h4>
-  
-<p align="center">
-    <a href="https://studio.mogenius.com/">
-    <img src="https://www.cloudflare.com/static/90073b1e5bd8a0765640a20febb3dc22/mogenius_logo_quer.png" alt="Deploy on Mogenius" width="170px">
-    </a>
-    
-</p>
-
-<p align="center" >
-    <br>
-    __________________________
-    <br>
-</p>
-
-<br>
-
-<h4 align="center"> Deploy on Uffizzi
-</h4>
-  
-<p align="center">
-    <a href="https://www.uffizzi.com/">
-    <img src="https://i.ibb.co/Y29Kv4X/Screenshot-195.png" alt="Deploy on Uffizzi" width="125px">
-    </a>
-    
-</p>
-
-<br>
-
-<h4 align="center"> Deploy on BoxMineWorld
-</h4>
-  
-<p align="center">
-    <a href="https://dash.boxmineworld.com/">
-    <img src="https://graph.org/file/2af0e67f320986702ea24.jpg" alt="Deploy on Boxmineworld" width="175px">
-    </a>
-    <br>
-
-</p>
-
-<p align="center" >
-    <br>
-    __________________________
-    <br>
-</p>
-
-
-
-</details>
-
-<br>
-
-
-
-
-## `Authors`
-
-<div align="center">
-  
-| [![𝚂𝚊𝚕𝚖𝚊𝚗𝙾𝚏𝚏𝚒𝚌𝚒𝚊𝚕](https://github.com/ahmmikun.png?lenght=50width=50)](https://github.com/ahmmikun)|
-|----|
-| [ 𝙎𝘼𝙇𝙈𝘼𝙉 𝘼𝙃𝙈𝘼𝘿 ](https://github.com/ahmmikun) |
-|  Owner, Developer, Bug Fixer, Maintainer, updates |
-
-<br>
-  
-| [![SlasherOfficial](https://github.com/Maher-Zubair.png?lenght=50width=50)](https://github.com/Maher-Zubair) |
-|----|
-| [ 𝙈𝘼𝙃𝙀𝙍 𝙕𝙐𝘽𝘼𝙄𝙍 ](https://github.com/Maher-Zubair) |
-|  Co.Owner , Bug Fixer, |
-
-  </div>
-  
-   ## 
-| [![Xcelsama](https://github.com/Xcelsama.png?lenght=50width=50)](https://github.com/Xcelsama) |
-|----|
-| [ 乂匚乇ㄥ丂卂爪卂](https://github.com/Xcelsama) |
-|  Co.Owner , Bug Fixer,Tester
-
-  ## `Support`
-
-For support, email [ xheikhsalman4422@gmail.com ] or join our whatsapp group.
-
-
-<p align="center">
-  <a aria-label="Join our chats" href="https://chat.whatsapp.com/C4ivwZKuh5bLJkqfYNPQsk" target="_blank">
-    <img alt="whatsapp" src="https://img.shields.io/badge/Join Group-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" />
-  </a>
-<a aria-label="Join our chats" href="https://wa.me/923184070915?text=Hi!! SalmanAhmad Sir, I need Your Help" target="_blank">
-    <img alt="whatsapp" src="https://img.shields.io/badge/Bot%20Whatsapp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" />
-</p>
-
-**Buy Me a Coffee**: Your support will help me stay motivated and continue working on exciting projects like this one.
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.buymeacoffee.com/ahmmikun">
-  <img src="https://i.ibb.co/KNnhcvX/bmc-button.png" alt="Buy Me Coffee" height="40" width="150" style="margin-left: 60px;">
-</a>
-
-
-</br>
-
-
-<h2 align="center">  Reminder
-</h2>
-   
-- This bot is not made by `WhatsApp Inc.` So misusing the bot might `ban` your `WhatsApp account!`(Though your WhatsApp account can be unbanned only once.)
-- I am not responsible for banning your account.
-- Use at your own risk by keeping this warning in mind.
- 
-
-
-
-</br></br>
-<h1 align="left">  ✨Spacial Thanks To🎯
-</h1>
-
-* [`🎐 Sampandey`](https://github.com/SamPandey001) ***For Sector MD Base***
-* [`🎐Xcelsama`](https://github.com/Xcelsama) ***For QR***
-* [`🎐 SuhailTechInfo`](https://github.com/SuhailTechInfo) ***For Scripts and Debugging***
-* [`🎐 MAHER-ZUBAIR`](https://github.com/Maher-Zubair) ***For Fixing Plugins***
-* [`🎐 Abraham Dwamena`](https://github.com/abrahamdw882) ***For QR Ideas***
-* [`🎐 MR-KALINDU`](https://github.com/MR-KALINDU) ***For Fixing Errors***
-* 
-
-
----
-
-</p>
-<h1 align="center"> Thanks To  SuhailTechInfo
-</h1>
-
- <br><br>
-
-
-
+Xlicon uses an unofficial WhatsApp connection. WhatsApp can ban numbers that use one, so use a number you can afford to lose. Keep `config.env` and the `session` folder private.
