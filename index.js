@@ -1,6 +1,12 @@
 const path = require('path');
 const fs = require('fs');
 const { spawn } = require('child_process');
+try {
+    const ft = require('file-type');
+    if (typeof ft === 'function' && !ft.fromBuffer) {
+        ft.fromBuffer = async (input) => ft(input);
+    }
+} catch (e) {}
 
 // Read config.env here too (the same file config.js reads) so we can see MONGODB_URI before the bot starts.
 const cfg = path.join(__dirname, 'config.env');

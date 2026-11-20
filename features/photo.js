@@ -1,6 +1,8 @@
-const { cmd } = require('../lib/');
-const { exec } = require('child_process');
+const { cmd, ui } = require('../lib');
+const { execFile } = require('child_process');
 const fs = require('fs-extra');
+const { getTempFilePath, safeUnlink } = require('../lib/shared/tempFiles');
+
 cmd(
     {
         pattern: 'photo',
@@ -10,17 +12,20 @@ cmd(
         filename: __filename,
     },
     async (Void, citel, text) => {
-        const getRandom = (ext) => {
-            return `${Math.floor(Math.random() * 10000)}${ext}`;
-        };
-        if (!citel.quoted) return citel.reply(`_Reply to Any Sticker._`);
-        let mime = citel.quoted.mtype;
-        if (mime == 'imageMessage' || mime == 'stickerMessage') {
-            let media = await Void.downloadAndSaveMediaMessage(citel.quoted);
-            let name = await getRandom('.png');
-            exec(`ffmpeg -i ${media} ${name}`, (err) => {
-                let buffer = fs.readFileSync(media);
-                Void.sendMessage(
+        if (!citel.quoted) return citel.reply('_Reply to Any Sticker._');
+        const mime = citel.quoted.mtype;
+        if (mime !== 'imageMessage' && mime !== 'stickerMessage') {
+            return citel.reply('```Uhh Please, Reply To A Non Animated Sticker```');
+        }
+
+        const media = await Void.downloadAndSaveMediaMessage(citel.quoted);
+        const output = getTempFilePath('png');
+
+        execFile('ffmpeg', ['-y', '-i', media, output], async (error) => {
+            try {
+                if (error) return await citel.reply(ui.fail(`ffmpeg failed: ${error.message}`));
+                const buffer = await fs.promises.readFile(output);
+                await Void.sendMessage(
                     citel.chat,
                     {
                         image: buffer,
@@ -29,17 +34,12 @@ cmd(
                         quoted: citel,
                     },
                 );
-                fs.unlink(media, (err) => {
-                    if (err) {
-                        return console.error(
-                            'File Not Deleted from From TOPHOTO AT : ',
-                            media,
-                            '\n while Error : ',
-                            err,
-                        );
-                    } else return console.log('File deleted successfully in TOPHOTO  at : ', media);
-                });
-            });
-        } else return citel.reply('```Uhh Please, Reply To A Non Animated Sticker```');
+            } catch (err) {
+                await citel.reply(ui.fail(`Could not convert the sticker: ${err.message}`));
+            } finally {
+                safeUnlink(media);
+                safeUnlink(output);
+            }
+        });
     },
 );

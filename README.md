@@ -486,6 +486,13 @@ cmd(
 - **Docker and Heroku.** `lib/Dockerfile` (used by `heroku.yml`) clones the upstream repository inside the image, so it deploys that code and not your copy. Change the `git clone` URL to your own repo before using it. Platforms that erase files on every restart lose the session, so set `SESSION_DIR` to a persistent disk or expect to pair again after each restart.
 - **`lib/start.sh`** is an older restart loop. You do not need it.
 
+## Security
+
+Read [SECURITY.md](SECURITY.md) before deploying. External plugin loading and
+the owner JavaScript evaluator are disabled by default. If this repository was
+ever public with real credentials in it, rotate those credentials: deleting
+them from the latest commit does not remove them from Git history.
+
 ## Good to know
 
 Xlicon uses an unofficial WhatsApp connection. WhatsApp can ban numbers that use one, so use a number you can afford to lose. Keep `config.env` and the `session` folder private.

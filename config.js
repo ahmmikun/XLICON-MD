@@ -22,6 +22,17 @@ module.exports = {
     numbers: ownerNumbers,
   },
   pastebinKey: process.env.PASTEBIN_KEY || '',
+  acrcloud: {
+    host: process.env.ACRCLOUD_HOST || 'identify-eu-west-1.acrcloud.com',
+    accessKey: process.env.ACRCLOUD_ACCESS_KEY || '',
+    accessSecret: process.env.ACRCLOUD_ACCESS_SECRET || '',
+  },
+  telegraphToken: process.env.TELEGRAPH_ACCESS_TOKEN || '',
+  cookies: {
+    pinterest: process.env.PINTEREST_COOKIE || '',
+    instagram: process.env.INSTAGRAM_COOKIE || '',
+    facebook: process.env.FACEBOOK_COOKIE || '',
+  },
   keys: {
     gemini: process.env.GEMINI_API_KEY || '',
     groq: process.env.GROQ_API_KEY || '',

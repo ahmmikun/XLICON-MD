@@ -1,6 +1,8 @@
 const { cmd, ui } = require('../lib');
-const { exec } = require('child_process');
+const { execFile } = require('child_process');
 const fs = require('fs');
+const { getTempFilePath, safeUnlink } = require('../lib/shared/tempFiles');
+
 cmd(
     {
         pattern: 'deep',
@@ -10,28 +12,39 @@ cmd(
         react: '🌀',
     },
     async (Void, citel) => {
-        let mime = citel.quoted.mtype;
-        let set = '-af atempo=4/4,asetrate=44500*2/3';
-        if (/audio/.test(mime)) {
-            citel.reply(ui.text.wait);
-            let media = await Void.downloadAndSaveMediaMessage(citel.quoted);
-            let ran = citel.sender.slice(6) + '.mp3';
-            exec(`ffmpeg -i ${media} ${set} ${ran}`, (err, stderr, stdout) => {
-                fs.unlinkSync(media);
-                if (err) return reply(err);
-                let buff = fs.readFileSync(ran);
-                Void.sendMessage(
-                    citel.chat,
-                    {
-                        audio: buff,
-                        mimetype: 'audio/mpeg',
-                    },
-                    {
-                        quoted: citel,
-                    },
-                );
-                fs.unlinkSync(ran);
-            });
-        } else citel.reply(`Reply to the audio you want to change with.*`);
+        if (!citel.quoted) return citel.reply(ui.info('Reply to an audio message.'));
+        if (!/audio/.test(citel.quoted.mtype)) {
+            return citel.reply('Reply to the audio you want to change with.');
+        }
+
+        citel.reply(ui.text.wait);
+        const media = await Void.downloadAndSaveMediaMessage(citel.quoted);
+        const output = getTempFilePath('mp3');
+
+        execFile(
+            'ffmpeg',
+            ['-y', '-i', media, '-af', 'atempo=4/4,asetrate=44500*2/3', output],
+            async (error) => {
+                try {
+                    if (error) return await citel.reply(ui.fail(`ffmpeg failed: ${error.message}`));
+                    const buffer = await fs.promises.readFile(output);
+                    await Void.sendMessage(
+                        citel.chat,
+                        {
+                            audio: buffer,
+                            mimetype: 'audio/mpeg',
+                        },
+                        {
+                            quoted: citel,
+                        },
+                    );
+                } catch (err) {
+                    await citel.reply(ui.fail(`Could not process the audio: ${err.message}`));
+                } finally {
+                    safeUnlink(media);
+                    safeUnlink(output);
+                }
+            },
+        );
     },
 );
